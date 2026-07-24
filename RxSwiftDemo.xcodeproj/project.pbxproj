@@ -12,6 +12,8 @@
 		41D1AC36301356ED00D14C88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1AC33301356ED00D14C88 /* ViewController.swift */; };
 		41D1AC37301356ED00D14C88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41D1AC2F301356ED00D14C88 /* Assets.xcassets */; };
 		41D1AC39301356ED00D14C88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41D1AC32301356ED00D14C88 /* LaunchScreen.storyboard */; };
+		41D1AC3C3013605300D14C88 /* SimpleValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1AC3B3013605300D14C88 /* SimpleValidationViewController.swift */; };
+		41D1AC3E3013616A00D14C88 /* ScrollDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1AC3D3013616A00D14C88 /* ScrollDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		41D1AC30301356ED00D14C88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41D1AC31301356ED00D14C88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41D1AC33301356ED00D14C88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		41D1AC3B3013605300D14C88 /* SimpleValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleValidationViewController.swift; sourceTree = "<group>"; };
+		41D1AC3D3013616A00D14C88 /* ScrollDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDemoViewController.swift; sourceTree = "<group>"; };
 		6835AFD7B9E2181871A55ED7 /* Pods-RxSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		D68AE514AA3246DCA2AFD931 /* Pods-RxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		EA2BB96E6F799043D731C2E3 /* Pods_RxSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,11 +65,21 @@
 			children = (
 				41D1AC2E301356ED00D14C88 /* AppDelegate.swift */,
 				41D1AC33301356ED00D14C88 /* ViewController.swift */,
+				41D1AC3A30135E2800D14C88 /* demos */,
 				41D1AC2F301356ED00D14C88 /* Assets.xcassets */,
 				41D1AC30301356ED00D14C88 /* Info.plist */,
 				41D1AC32301356ED00D14C88 /* LaunchScreen.storyboard */,
 			);
 			path = RxSwiftDemo;
+			sourceTree = "<group>";
+		};
+		41D1AC3A30135E2800D14C88 /* demos */ = {
+			isa = PBXGroup;
+			children = (
+				41D1AC3B3013605300D14C88 /* SimpleValidationViewController.swift */,
+				41D1AC3D3013616A00D14C88 /* ScrollDemoViewController.swift */,
+			);
+			path = demos;
 			sourceTree = "<group>";
 		};
 		712F683FC2848F144112C885 /* Pods */ = {
@@ -184,13 +198,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -204,8 +214,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D1AC3E3013616A00D14C88 /* ScrollDemoViewController.swift in Sources */,
 				41D1AC35301356ED00D14C88 /* AppDelegate.swift in Sources */,
 				41D1AC36301356ED00D14C88 /* ViewController.swift in Sources */,
+				41D1AC3C3013605300D14C88 /* SimpleValidationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +251,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -277,7 +289,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

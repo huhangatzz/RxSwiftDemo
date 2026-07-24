@@ -8,5 +8,6 @@ target 'RxSwiftDemo' do
   # Pods for RxSwiftDemo
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'SnapKit'
 
 end
