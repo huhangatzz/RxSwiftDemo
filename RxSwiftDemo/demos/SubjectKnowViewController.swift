@@ -90,7 +90,7 @@ class SubjectKnowViewController: UIViewController {
         subject.onNext("🅱️") // 缓存更新[🅱️]，同时广播给 订阅1、订阅2
     }
 
-    //当观察者对 BehaviorSubject 进行订阅时，它会将源 Observable 中最新的元素发送出来（如果不存在最新的元素，就发出默认元素）。然后将随后产生的元素发送出来。
+    //BehaviorSubject 当观察者对 BehaviorSubject 进行订阅时，它会将源 Observable 中最新的元素发送出来（如果不存在最新的元素，就发出默认元素）。然后将随后产生的元素发送出来。
     func behaviorSubjectTest() {
         let subject = BehaviorSubject(value: "🔴")
         

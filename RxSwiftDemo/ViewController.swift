@@ -25,6 +25,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         Demos(title: "4.Signal - 可监听序列", content: "Signal 不会对新观察者回放上一个元素", makeVC: { SignalKnowViewController() }),
         Demos(title: "4.AnyObserver - 任意观察者", content: "AnyObserver 可以用来描叙任意一种观察者", makeVC: { AnyObserverViewController() }),
         Demos(title: "4.Subject", content: "4种Subject", makeVC: { SubjectKnowViewController() }),
+        Demos(title: "4.操作符选择", content: "了解操作符", makeVC: { OperatorSelectViewController() }),
     ]
     
     override func viewDidLoad() {

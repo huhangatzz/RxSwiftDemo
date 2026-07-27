@@ -13,6 +13,7 @@
 		41D1AC37301356ED00D14C88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41D1AC2F301356ED00D14C88 /* Assets.xcassets */; };
 		41D1AC39301356ED00D14C88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41D1AC32301356ED00D14C88 /* LaunchScreen.storyboard */; };
 		41D1AC3C3013605300D14C88 /* SimpleValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1AC3B3013605300D14C88 /* SimpleValidationViewController.swift */; };
+		41D1AC413016E9C100D14C88 /* OperatorSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1AC403016E9C100D14C88 /* OperatorSelectViewController.swift */; };
 		452AFB773016353400D7A3DB /* SignalKnowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB763016353400D7A3DB /* SignalKnowViewController.swift */; };
 		452AFB7930164A8300D7A3DB /* AnyObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB7830164A8300D7A3DB /* AnyObserverViewController.swift */; };
 		452AFB7B301650C400D7A3DB /* SubjectKnowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB7A301650C400D7A3DB /* SubjectKnowViewController.swift */; };
@@ -28,6 +29,7 @@
 		41D1AC31301356ED00D14C88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41D1AC33301356ED00D14C88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		41D1AC3B3013605300D14C88 /* SimpleValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleValidationViewController.swift; sourceTree = "<group>"; };
+		41D1AC403016E9C100D14C88 /* OperatorSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorSelectViewController.swift; sourceTree = "<group>"; };
 		452AFB763016353400D7A3DB /* SignalKnowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalKnowViewController.swift; sourceTree = "<group>"; };
 		452AFB7830164A8300D7A3DB /* AnyObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyObserverViewController.swift; sourceTree = "<group>"; };
 		452AFB7A301650C400D7A3DB /* SubjectKnowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectKnowViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				452AFB763016353400D7A3DB /* SignalKnowViewController.swift */,
 				452AFB7830164A8300D7A3DB /* AnyObserverViewController.swift */,
 				452AFB7A301650C400D7A3DB /* SubjectKnowViewController.swift */,
+				41D1AC403016E9C100D14C88 /* OperatorSelectViewController.swift */,
 			);
 			path = demos;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			files = (
 				452AFB7B301650C400D7A3DB /* SubjectKnowViewController.swift in Sources */,
 				41D1AC35301356ED00D14C88 /* AppDelegate.swift in Sources */,
+				41D1AC413016E9C100D14C88 /* OperatorSelectViewController.swift in Sources */,
 				452AFB7930164A8300D7A3DB /* AnyObserverViewController.swift in Sources */,
 				452AFB773016353400D7A3DB /* SignalKnowViewController.swift in Sources */,
 				41D1AC36301356ED00D14C88 /* ViewController.swift in Sources */,
