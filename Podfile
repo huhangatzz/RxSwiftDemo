@@ -6,7 +6,7 @@ target 'RxSwiftDemo' do
   use_frameworks!
 
   # Pods for RxSwiftDemo
-  pod 'RxSwift'
+  pod 'RxSwift', :subspecs => ['Resources'] #RxSwift编译时自动开启 TRACE_RESOURCES
   pod 'RxCocoa'
   pod 'SnapKit'
 

@@ -1,8 +1,8 @@
 //
-//  SimpleValidationViewController.swift
+//  AnyObserverViewController.swift
 //  RxSwiftDemo
 //
-//  Created by Kaiser on 2026/7/24.
+//  Created by 胡航 on 2026/7/26.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ import RxCocoa
 private let minimalUsernameLength = 5
 private let minimalPasswordLength = 5
 
-class SimpleValidationViewController: UIViewController {
+class AnyObserverViewController: UIViewController {
 
     let bottomView = UIView()
     let nameLabel = UILabel()
@@ -30,7 +30,8 @@ class SimpleValidationViewController: UIViewController {
         
         createUI()
         layoutUI()
-        logicDeal()
+        //anyObserverDeal()
+        binderDeal()
     }
     
     func createUI() {
@@ -147,47 +148,36 @@ class SimpleValidationViewController: UIViewController {
         }
     }
     
-    //逻辑处理
-    func logicDeal() {
-        //用户名是否有效
+    //AnyObserver 使用
+    func anyObserverDeal() {
+        //观察者
+        let observer: AnyObserver<Bool> = AnyObserver { [weak self] event in
+            switch event {
+            case .next(let isHidden):
+                self?.nameTipLabel.isHidden = isHidden
+            default:
+                break
+            }
+        }
+        
         let usernameValid = nameTF.rx.text.orEmpty
-            // 用户名 -> 用户名是否有效
             .map { $0.count >= minimalUsernameLength }
             .share(replay: 1)
+        usernameValid.bind(to: observer)
+            .disposed(by: disposeBag)
+    }
     
-        // 用户名是否有效 -> 密码输入框是否可用
-        usernameValid.bind(to: pwdTF.rx.isEnabled)
-            .disposed(by: disposeBag)
+    //Binder的使用
+    func binderDeal() {
         
-        // 用户名是否有效 -> 用户名提示语是否隐藏
-        usernameValid.bind(to: nameTipLabel.rx.isHidden).disposed(by: disposeBag)
+        let observer: Binder<Bool> = Binder(nameTipLabel) { view, isHidden in
+            view.isHidden = isHidden
+        }
         
-        //密码是否有效
-        let passwrodValid = pwdTF.rx.text.orEmpty //Observable<String>
-            //map 输出的信号类型 Observable<Bool>
-            .map { $0.count >= minimalPasswordLength }
+        let usernameValid = nameTF.rx.text.orEmpty
+            .map { $0.count >= minimalUsernameLength }
             .share(replay: 1)
-        
-        // 密码是否有效 -> 密码提示语是否隐藏
-        passwrodValid.bind(to: pwdTipLabel.rx.isHidden)
+        usernameValid.bind(to: observer)
             .disposed(by: disposeBag)
-        
-        // 所有输入是否有效
-        let everthingValid = Observable.combineLatest(usernameValid, passwrodValid) { $0 && $1}
-            .share(replay: 1)
-        
-        // 所有输入是否有效 -> 绿色按钮是否可点击
-        everthingValid.bind(to: button.rx.isEnabled)
-            .disposed(by: disposeBag)
-        
-        /*
-         share(replay: 1) 是用来做什么的？
-
-         我们用 usernameValid 来控制用户名提示语是否隐藏以及密码输入框是否可用。shareReplay 就是让他们共享这一个源，而不是为他们单独创建新的源。这样可以减少不必要的开支。
-
-         disposed(by: disposeBag) 是用来做什么的？
-
-         和我们所熟悉的对象一样，每一个绑定也是有生命周期的。并且这个绑定是可以被清除的。disposed(by: disposeBag)就是将绑定的生命周期交给 disposeBag 来管理。当 disposeBag 被释放的时候，那么里面尚未清除的绑定也就被清除了。这就相当于是在用 ARC 来管理绑定的生命周期。
-         */
     }
 }

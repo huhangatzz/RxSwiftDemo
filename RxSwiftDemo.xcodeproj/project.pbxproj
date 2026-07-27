@@ -13,6 +13,11 @@
 		41D1AC37301356ED00D14C88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41D1AC2F301356ED00D14C88 /* Assets.xcassets */; };
 		41D1AC39301356ED00D14C88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41D1AC32301356ED00D14C88 /* LaunchScreen.storyboard */; };
 		41D1AC3C3013605300D14C88 /* SimpleValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1AC3B3013605300D14C88 /* SimpleValidationViewController.swift */; };
+		452AFB773016353400D7A3DB /* SignalKnowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB763016353400D7A3DB /* SignalKnowViewController.swift */; };
+		452AFB7930164A8300D7A3DB /* AnyObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB7830164A8300D7A3DB /* AnyObserverViewController.swift */; };
+		452AFB7B301650C400D7A3DB /* SubjectKnowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB7A301650C400D7A3DB /* SubjectKnowViewController.swift */; };
+		4593CE013014EF1400283356 /* FucntionProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4593CE003014EF1400283356 /* FucntionProgramViewController.swift */; };
+		4593CE033015062E00283356 /* ObservableKnowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4593CE023015062E00283356 /* ObservableKnowViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,11 @@
 		41D1AC31301356ED00D14C88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41D1AC33301356ED00D14C88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		41D1AC3B3013605300D14C88 /* SimpleValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleValidationViewController.swift; sourceTree = "<group>"; };
+		452AFB763016353400D7A3DB /* SignalKnowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalKnowViewController.swift; sourceTree = "<group>"; };
+		452AFB7830164A8300D7A3DB /* AnyObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyObserverViewController.swift; sourceTree = "<group>"; };
+		452AFB7A301650C400D7A3DB /* SubjectKnowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectKnowViewController.swift; sourceTree = "<group>"; };
+		4593CE003014EF1400283356 /* FucntionProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FucntionProgramViewController.swift; sourceTree = "<group>"; };
+		4593CE023015062E00283356 /* ObservableKnowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableKnowViewController.swift; sourceTree = "<group>"; };
 		6835AFD7B9E2181871A55ED7 /* Pods-RxSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		D68AE514AA3246DCA2AFD931 /* Pods-RxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		EA2BB96E6F799043D731C2E3 /* Pods_RxSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +85,11 @@
 			isa = PBXGroup;
 			children = (
 				41D1AC3B3013605300D14C88 /* SimpleValidationViewController.swift */,
+				4593CE003014EF1400283356 /* FucntionProgramViewController.swift */,
+				4593CE023015062E00283356 /* ObservableKnowViewController.swift */,
+				452AFB763016353400D7A3DB /* SignalKnowViewController.swift */,
+				452AFB7830164A8300D7A3DB /* AnyObserverViewController.swift */,
+				452AFB7A301650C400D7A3DB /* SubjectKnowViewController.swift */,
 			);
 			path = demos;
 			sourceTree = "<group>";
@@ -195,9 +210,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -211,9 +230,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				452AFB7B301650C400D7A3DB /* SubjectKnowViewController.swift in Sources */,
 				41D1AC35301356ED00D14C88 /* AppDelegate.swift in Sources */,
+				452AFB7930164A8300D7A3DB /* AnyObserverViewController.swift in Sources */,
+				452AFB773016353400D7A3DB /* SignalKnowViewController.swift in Sources */,
 				41D1AC36301356ED00D14C88 /* ViewController.swift in Sources */,
+				4593CE033015062E00283356 /* ObservableKnowViewController.swift in Sources */,
 				41D1AC3C3013605300D14C88 /* SimpleValidationViewController.swift in Sources */,
+				4593CE013014EF1400283356 /* FucntionProgramViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
