@@ -23,9 +23,15 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         Demos(title: "2.函数式编程", content: "函数式编程是种编程范式，它需要我们将函数作为参数传递，或者作为返回值返还。我们可以通过组合不同的函数来得到想要的结果。", makeVC: { FucntionProgramViewController() }),
         Demos(title: "3.Observable - 可监听序列", content: "Observable 可以用于描述元素异步产生的序列", makeVC: { ObservableKnowViewController() }),
         Demos(title: "4.Signal - 可监听序列", content: "Signal 不会对新观察者回放上一个元素", makeVC: { SignalKnowViewController() }),
-        Demos(title: "4.AnyObserver - 任意观察者", content: "AnyObserver 可以用来描叙任意一种观察者", makeVC: { AnyObserverViewController() }),
-        Demos(title: "4.Subject", content: "4种Subject", makeVC: { SubjectKnowViewController() }),
-        Demos(title: "4.操作符选择", content: "了解操作符", makeVC: { OperatorSelectViewController() }),
+        Demos(title: "5.AnyObserver - 任意观察者", content: "AnyObserver 可以用来描叙任意一种观察者", makeVC: { AnyObserverViewController() }),
+        Demos(title: "6.Subject", content: "4种Subject", makeVC: { SubjectKnowViewController() }),
+        Demos(title: "7.操作符选择", content: "了解操作符", makeVC: { OperatorSelectViewController() }),
+        Demos(title: "8.MVVM简单了解", content: "RxSwift下的MVVM", makeVC: { MVVMKnowViewController() }),
+        Demos(title: "9.MVVM注册", content: "复杂的MVVM", makeVC: {
+            let sb = UIStoryboard(name: "RegisterViewController", bundle: nil)
+            guard let registerVC = sb.instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController else { return UIViewController() }
+            return registerVC
+        }),
     ]
     
     override func viewDidLoad() {
