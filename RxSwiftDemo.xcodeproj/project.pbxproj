@@ -13,6 +13,8 @@
 		417B47AA3018461F00DBF8FF /* GitHubDefaultValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B47A93018461F00DBF8FF /* GitHubDefaultValidationService.swift */; };
 		417B47AD30184BD400DBF8FF /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B47AC30184BD400DBF8FF /* String+URL.swift */; };
 		417B47AF30185AAD00DBF8FF /* RegisterBindingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B47AE30185AAD00DBF8FF /* RegisterBindingExtensions.swift */; };
+		417B47B13018A8A100DBF8FF /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B47B03018A8A100DBF8FF /* ActivityIndicator.swift */; };
+		417B47B33018B4A200DBF8FF /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B47B23018B4A200DBF8FF /* Wireframe.swift */; };
 		41888C6435A1EDBC3E7B5CC9 /* Pods_RxSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2BB96E6F799043D731C2E3 /* Pods_RxSwiftDemo.framework */; };
 		41D1AC35301356ED00D14C88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1AC2E301356ED00D14C88 /* AppDelegate.swift */; };
 		41D1AC36301356ED00D14C88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1AC33301356ED00D14C88 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 		417B47A93018461F00DBF8FF /* GitHubDefaultValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubDefaultValidationService.swift; sourceTree = "<group>"; };
 		417B47AC30184BD400DBF8FF /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 		417B47AE30185AAD00DBF8FF /* RegisterBindingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBindingExtensions.swift; sourceTree = "<group>"; };
+		417B47B03018A8A100DBF8FF /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		417B47B23018B4A200DBF8FF /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		41D1AC163013565000D14C88 /* RxSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D1AC2E301356ED00D14C88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41D1AC2F301356ED00D14C88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 				417B47A93018461F00DBF8FF /* GitHubDefaultValidationService.swift */,
 				417B47A73018394400DBF8FF /* RegisterProtocols.swift */,
 				417B47AE30185AAD00DBF8FF /* RegisterBindingExtensions.swift */,
+				417B47B03018A8A100DBF8FF /* ActivityIndicator.swift */,
+				417B47B23018B4A200DBF8FF /* Wireframe.swift */,
 				417B47AC30184BD400DBF8FF /* String+URL.swift */,
 				417B479C3017477C00DBF8FF /* RegisterViewController.storyboard */,
 			);
@@ -288,8 +294,10 @@
 				4593CE033015062E00283356 /* ObservableKnowViewController.swift in Sources */,
 				41D1AC3C3013605300D14C88 /* SimpleValidationViewController.swift in Sources */,
 				4593CE013014EF1400283356 /* FucntionProgramViewController.swift in Sources */,
+				417B47B33018B4A200DBF8FF /* Wireframe.swift in Sources */,
 				417B47A83018394400DBF8FF /* RegisterProtocols.swift in Sources */,
 				41D1AC44301731CD00D14C88 /* MVVMKnowViewController.swift in Sources */,
+				417B47B13018A8A100DBF8FF /* ActivityIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

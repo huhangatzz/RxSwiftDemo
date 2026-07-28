@@ -11,18 +11,24 @@ import RxCocoa
 
 class GitHubDefaultValidationService: GitHubValidationService {
 
+    //这块代码直接使用shareValidationService类方法完成初始化
     let API: GithubAPI
     
+    //传递真正的网络请求工具GitHubDefaultAPI
     static let shareValidationService = GitHubDefaultValidationService(API: GitHubDefaultAPI.sharedAPI)
     
     init(API: GithubAPI) {
         self.API = API
     }
     
+    let minPasswordCount = 5
+    
     // 用户名的各种逻辑判断放在这里面了
     func validateUsername(_ username: String) -> Observable<ValidationResult> {
         
+        //用户名是为空
         if username.isEmpty {
+            //just 创建 Observable 发出唯一的一个元素
             return .just(.empty)
         }
         
@@ -42,6 +48,38 @@ class GitHubDefaultValidationService: GitHubValidationService {
                 }
             }
             .startWith(loadingValue)
+    }
+    
+    //密码逻辑判断
+    func validatePassword(_ password: String) -> ValidationResult {
+        let numberOfCharacters = password.count
+        
+        //字符为空
+        if numberOfCharacters == 0 {
+            return .empty
+        }
+        
+        //字符位数少于5位
+        if numberOfCharacters < minPasswordCount {
+            return .failed(message: "密码至少\(minPasswordCount)位字符")
+        }
+        
+        //成功
+        return .ok(message: "密码可接受")
+    }
+    
+    // 确认密码校验
+    func validateRepeatedPassword(_ password: String, repeatedPassword: String) -> ValidationResult {
+        
+        if repeatedPassword.count == 0 {
+            return .empty
+        }
+        
+        if repeatedPassword == password {
+            return .ok(message: "密码相同")
+        } else {
+            return .failed(message: "密码不同")
+        }
     }
 }
 
@@ -65,5 +103,13 @@ class GitHubDefaultAPI: GithubAPI {
                 pair.response.statusCode == 404
             }
             .catchAndReturn(false)
+    }
+    
+    //注册
+    func signup(_ username: String, password: String) -> Observable<Bool> {
+        let signupResult = arc4random() % 5 == 0 ? false : true
+        
+        return Observable.just(signupResult)
+            .delay(.seconds(1), scheduler: MainScheduler.instance)
     }
 }

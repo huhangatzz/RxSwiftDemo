@@ -19,9 +19,13 @@ enum ValidationResult {
 // 提供 GitHub 网络服务
 protocol GithubAPI {
     func usernameValilable(_ username: String) -> Observable<Bool>
+    func signup(_ username: String, password: String) -> Observable<Bool>
 }
 
 // 提供输入验证服务
 protocol GitHubValidationService {
     func validateUsername(_ username: String) -> Observable<ValidationResult>
+    func validatePassword(_ password: String) ->
+    ValidationResult
+    func validateRepeatedPassword(_ password: String, repeatedPassword: String) -> ValidationResult
 }
