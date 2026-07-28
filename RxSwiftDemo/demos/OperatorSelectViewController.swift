@@ -388,6 +388,13 @@ class OperatorSelectViewController: UIViewController {
         subject.onNext(second)
         second.onNext("🅱️")
         first.onNext("🐶")
+        
+        /*
+         👦🏻
+         🐱
+         🅰️
+         🅱️
+         */
     }
     
     /*
