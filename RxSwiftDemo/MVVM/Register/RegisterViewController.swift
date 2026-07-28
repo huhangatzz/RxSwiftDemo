@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+//控制器仅仅只做数据绑定操作,其他逻辑全部都在ViewModel中
 class RegisterViewController: UIViewController {
     @IBOutlet var usernameOutlet: UITextField!
     @IBOutlet var usernameValidationOutlet: UILabel!
@@ -35,10 +36,10 @@ class RegisterViewController: UIViewController {
                 repeatedPasswrod: repeatedPasswordOutlet.rx.text.orEmpty.asObservable(),
                 loginTaps: signupOutlet.rx.tap.asObservable()
             ),
-            dependency: (
-                API: GitHubDefaultAPI.sharedAPI,
-                validationService: GitHubDefaultValidationService.shareValidationService,
-                wireframe: DefaultWireframe.shared
+            dependency: (//依赖
+                API: GitHubDefaultAPI.sharedAPI,//接口请求工具类
+                validationService: GitHubDefaultValidationService.shareValidationService,//逻辑类
+                wireframe: DefaultWireframe.shared//系统弹窗类
             ),
         )
         
@@ -71,6 +72,7 @@ class RegisterViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
+        //点击事件
         let tagBackground = UITapGestureRecognizer()
         tagBackground.rx.event
             .subscribe { [weak self] _ in

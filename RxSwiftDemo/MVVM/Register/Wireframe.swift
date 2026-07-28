@@ -57,11 +57,13 @@ class DefaultWireframe: Wireframe {
             let alertView = UIAlertController(title: "RxExample", message: message, preferredStyle: .alert)
             alertView.addAction(UIAlertAction(title: cancelAction.description, style: .cancel) { _ in
                 observer.on(.next(cancelAction))
+                observer.onCompleted()
             })
 
             for action in actions {
                 alertView.addAction(UIAlertAction(title: action.description, style: .default) { _ in
                     observer.on(.next(action))
+                    observer.onCompleted()
                 })
             }
 

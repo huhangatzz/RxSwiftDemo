@@ -20,7 +20,7 @@ class RegisterViewModel {
     // 确认密码校验结果
     let validatePasswordRepeated: Observable<ValidationResult>
     
-    //注册按钮是否等点击
+    //注册按钮是否能点击
     let signupEnabled: Observable<Bool>
     //是否正在登录
     let signingIn: Observable<Bool>
@@ -47,14 +47,14 @@ class RegisterViewModel {
         
         //在外界没有订阅之前,validatedUsername就是一个冷信号,所以外界需要调用bind订阅信号
         validatedUsername = input.username
-            .do(onNext: { name in
+            .do(onNext: { name in//监听打印使用
                    print("输入文本：\(name)")
             })
             .flatMapLatest({ username in
                 //内容需要调用接口必须使用flatMapLatest
                 validationService.validateUsername(username)// 这里有接口请求后,需要调用observe
                     .observe(on: MainScheduler.instance)// 下游都放到主线程中执行
-                    .catchAndReturn(.failed(message: "无法连接服务器"))
+                    .catchAndReturn(.failed(message: "无法连接服务器")) //收到error时才会执行这样
             })
             .share(replay: 1)//优化性能的
         
@@ -74,7 +74,7 @@ class RegisterViewModel {
         ) { password, repeatedPassword in
             validationService.validateRepeatedPassword(password, repeatedPassword: repeatedPassword)
         }
-        .share(replay: 1)
+        .share(replay: 1) //共享使用
         
         //是否正在注册中
         let signingIn = ActivityIndicator()
@@ -103,6 +103,7 @@ class RegisterViewModel {
             })
             //收到上游事件，执行闭包
             .flatMapLatest({ loggedin -> Observable<Bool> in
+                //上面的loginTaps这个被订阅后,整个管道就畅通了
                 let message = loggedin ? "Mock: 注册成功" : "Mock: 注册失败"
                 return wireframe.promptFor(message, cancelAction: "OK", actions: [])
                     .map { _ in
@@ -118,7 +119,6 @@ class RegisterViewModel {
          
          监听四项条件的实时变化，任意条件变动，重新计算「注册按钮能不能点击」。
          */
-        
         signupEnabled = Observable.combineLatest(
             validatedUsername,
             validatePassword,
@@ -127,7 +127,7 @@ class RegisterViewModel {
         ) { username, password, repeatPassword, signingIn in
             username.isValid && password.isValid && repeatPassword.isValid && !signingIn
         }
-        .distinctUntilChanged()
+        .distinctUntilChanged() //两次值不一致才执行
         .share(replay: 1)
         
     }

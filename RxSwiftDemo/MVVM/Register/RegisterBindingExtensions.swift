@@ -1,6 +1,6 @@
 //
 //  RegisterBindingExtensions.swift
-//  RxSwiftDemo
+//  处理枚举值-> 转换字符串和颜色
 //
 //  Created by Kaiser on 2026/7/28.
 //
@@ -11,7 +11,7 @@ import RxSwift
 
 enum ValidationColors {
     static let okColor = UIColor(red: 138.0/255.0, green: 221.0/255.0, blue: 109.0/255.0, alpha: 1.0)
-    static let errorColor = UIColor.red
+    static let errorColor = UIColor.cyan
 }
 
 // 扩展描述文本计算属性
