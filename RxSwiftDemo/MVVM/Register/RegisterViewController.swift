@@ -58,6 +58,26 @@ class RegisterViewController: UIViewController {
             .bind(to: signingUpOulet.rx.isAnimating)
             .disposed(by: disposeBag)
         
+        viewModel.signedIn
+            .subscribe { signedIn in
+                print("User signed in \(signedIn)")
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.signupEnabled
+            .subscribe { [weak self] valid in
+                self?.signupOutlet.isEnabled = valid
+                self?.signupOutlet.alpha = valid ? 1.0 : 0.5
+            }
+            .disposed(by: disposeBag)
+        
+        let tagBackground = UITapGestureRecognizer()
+        tagBackground.rx.event
+            .subscribe { [weak self] _ in
+                self?.view.endEditing(true)
+            }
+            .disposed(by: disposeBag)
+        view.addGestureRecognizer(tagBackground)
     }
    
 }

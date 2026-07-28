@@ -19,13 +19,13 @@ class RegisterViewModel {
     let validatePassword: Observable<ValidationResult>
     // 确认密码校验结果
     let validatePasswordRepeated: Observable<ValidationResult>
-    //注册按钮是否等点击
     
+    //注册按钮是否等点击
+    let signupEnabled: Observable<Bool>
     //是否正在登录
     let signingIn: Observable<Bool>
-    
     //登录结果
-    //let signedIn: Observable<Bool>
+    let signedIn: Observable<Bool>
     
     // 输入 -> 输出
     init(
@@ -80,31 +80,55 @@ class RegisterViewModel {
         let signingIn = ActivityIndicator()
         self.signingIn = signingIn.asObservable()
         
-//        let usernameAndPassword = Observable.combineLatest(input.username,input.password) {
-//            (username:$0, password:$1)
-//        }
+        // 合并两条输入流：用户名、密码
+        /*
+         combineLatest规则
+         1.必须两个流都至少发射过一次值，才开始输出；
+         2.任意一条流更新，立刻取出：【用户名最新值 + 密码最新值】组装元组下发；
+         3.返回值：Observable<(username: String, password: String)>
+         */
+        let usernameAndPassword = Observable.combineLatest(input.username,input.password) {
+            //返回元组
+            (username:$0, password:$1)
+        }
         
         //登录结果
-//        signedIn = input.loginTaps
-//            .withLatestFrom(usernameAndPassword)
-//            .flatMapLatest({ pair in
-//                API.signup(pair.username, password: pair.password)
-//                    .observe(on: MainScheduler.instance)
-//                    .catchAndReturn(false)
-//                    .trackActivity(signingIn)
-//            })
-//            .flatMapLatest({ loggedin -> Observable<Bool> in
-//                let message = loggedin ? "Mock: 注册成功" : "Mock: 注册失败"
-//                return wireframe.promptFor(message, cancelAction: "OK", actions: [])
-//                    .map { _ in
-//                        loggedin
-//                    }
-//            })
-//            .share(replay: 1)
+        signedIn = input.loginTaps
+            .withLatestFrom(usernameAndPassword)//用户点击登录按钮那一刻，拿到此刻输入框最新填写的账号密码
+            .flatMapLatest({ pair in //收到上游事件，执行闭包
+                API.signup(pair.username, password: pair.password)
+                    .observe(on: MainScheduler.instance)
+                    .catchAndReturn(false)
+                    .trackActivity(signingIn)//是否激活小菊花
+            })
+            //收到上游事件，执行闭包
+            .flatMapLatest({ loggedin -> Observable<Bool> in
+                let message = loggedin ? "Mock: 注册成功" : "Mock: 注册失败"
+                return wireframe.promptFor(message, cancelAction: "OK", actions: [])
+                    .map { _ in
+                        loggedin
+                    }
+            })
+            .share(replay: 1)
+        
+        /*
+         combineLatest 规则回顾
+         所有上游流都至少发出过 1 次值，才会产生第一次输出
+         任意一条上游产生新值，立刻收集四条流【最新的值】送入闭包计算
+         
+         监听四项条件的实时变化，任意条件变动，重新计算「注册按钮能不能点击」。
+         */
+        
+        signupEnabled = Observable.combineLatest(
+            validatedUsername,
+            validatePassword,
+            validatePasswordRepeated,
+            signingIn.asObservable()
+        ) { username, password, repeatPassword, signingIn in
+            username.isValid && password.isValid && repeatPassword.isValid && !signingIn
+        }
+        .distinctUntilChanged()
+        .share(replay: 1)
         
     }
-    
-    
-    
-    
 }

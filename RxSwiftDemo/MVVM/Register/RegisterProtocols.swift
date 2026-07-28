@@ -29,3 +29,14 @@ protocol GitHubValidationService {
     ValidationResult
     func validateRepeatedPassword(_ password: String, repeatedPassword: String) -> ValidationResult
 }
+
+extension ValidationResult {
+    var isValid: Bool {
+        switch self {
+        case .ok:
+            true
+        default:
+            false
+        }
+    }
+}

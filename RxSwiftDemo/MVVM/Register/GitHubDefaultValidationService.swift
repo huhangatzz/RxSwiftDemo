@@ -10,7 +10,6 @@ import RxSwift
 import RxCocoa
 
 class GitHubDefaultValidationService: GitHubValidationService {
-
     //这块代码直接使用shareValidationService类方法完成初始化
     let API: GithubAPI
     
@@ -95,7 +94,6 @@ class GitHubDefaultAPI: GithubAPI {
     
     //用户名校验接口
     func usernameValilable(_ username: String) -> Observable<Bool> {
-        
         let url = URL(string: "https://github.com/\(username.URLScaped)")!
         let request = URLRequest(url: url)
         return URLSession.rx.response(request: request)
