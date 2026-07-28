@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class RegisterViewController: UIViewController {
     @IBOutlet var usernameOutlet: UITextField!
@@ -20,10 +22,25 @@ class RegisterViewController: UIViewController {
     @IBOutlet var signupOutlet: UIButton!
     @IBOutlet var signingUpOulet: UIActivityIndicatorView!
     
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        let viewModel = RegisterViewModel(
+            input: (
+                username: usernameOutlet.rx.text.orEmpty.asObservable(),
+                password:passwordOutlet.rx.text.orEmpty.asObservable()
+            ),
+            dependency: (
+                API: GitHubDefaultAPI.sharedAPI,
+                validationService: GitHubDefaultValidationService.shareValidationService,
+            ),
+        )
+        
+        viewModel.validatedUsername
+            .bind(to: usernameValidationOutlet.rx.validationResult)
+            .disposed(by: disposeBag)
     }
    
 }
