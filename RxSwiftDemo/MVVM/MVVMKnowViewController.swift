@@ -149,7 +149,10 @@ class MVVMKnowViewController: UIViewController {
     
     //逻辑处理
     func logicDeal() {
-        viewModel = MVVMKnowViewModel(username: nameTF.rx.text.orEmpty.asObservable(), password: pwdTF.rx.text.orEmpty.asObservable())
+        viewModel = MVVMKnowViewModel(
+            username: nameTF.rx.text.orEmpty.asObservable(),
+            password: pwdTF.rx.text.orEmpty.asObservable()
+        )
         
         viewModel.usernameValid
             .bind(to: pwdTF.rx.isEnabled)

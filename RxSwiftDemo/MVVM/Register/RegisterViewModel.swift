@@ -87,6 +87,7 @@ class RegisterViewModel {
          2.任意一条流更新，立刻取出：【用户名最新值 + 密码最新值】组装元组下发；
          3.返回值：Observable<(username: String, password: String)>
          */
+        //为啥要单独提出来:是因为避免重复创建全新的 combineLatest 序列
         let usernameAndPassword = Observable.combineLatest(input.username,input.password) {
             //返回元组
             (username:$0, password:$1)
@@ -97,9 +98,9 @@ class RegisterViewModel {
             .withLatestFrom(usernameAndPassword)//用户点击登录按钮那一刻，拿到此刻输入框最新填写的账号密码
             .flatMapLatest({ pair in //收到上游事件，执行闭包
                 API.signup(pair.username, password: pair.password)
+                    .trackActivity(signingIn)//是否激活小菊花
                     .observe(on: MainScheduler.instance)
                     .catchAndReturn(false)
-                    .trackActivity(signingIn)//是否激活小菊花
             })
             //收到上游事件，执行闭包
             .flatMapLatest({ loggedin -> Observable<Bool> in
