@@ -209,6 +209,7 @@ final class NormalRegisterView: UIView, UITextFieldDelegate {
         }
     }
 
+    //agreementLabel抖动动效
     func showAgreementRequiredFeedback() {
         let feedbackGenerator = UINotificationFeedbackGenerator()
         feedbackGenerator.prepare()

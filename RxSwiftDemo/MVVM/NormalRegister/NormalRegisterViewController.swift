@@ -55,6 +55,7 @@ final class NormalRegisterViewController: UIViewController {
             .bind(to: registerView.sendCodeButton.rx.isEnabled)
             .disposed(by: disposeBag)
 
+        //“协议未勾选”的点击获取验证码
         viewModel.agreementRequired
             .subscribe(onNext: { [weak self] in
                 self?.registerView.showAgreementRequiredFeedback()
