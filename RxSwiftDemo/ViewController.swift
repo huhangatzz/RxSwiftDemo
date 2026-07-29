@@ -32,9 +32,9 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             guard let registerVC = sb.instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController else { return UIViewController() }
             return registerVC
         }),
-//        Demos(title: "10.手机验证码注册", content: "RxSwift 实战注册页面", makeVC: {
-//            NormalRegisterViewController()
-//        }),
+        Demos(title: "10.手机验证码登录", content: "RxSwift 实战登录页面", makeVC: {
+            NormalRegisterViewController()
+        }),
     ]
     
     override func viewDidLoad() {

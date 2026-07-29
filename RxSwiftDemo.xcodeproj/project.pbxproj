@@ -27,6 +27,11 @@
 		452AFB773016353400D7A3DB /* SignalKnowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB763016353400D7A3DB /* SignalKnowViewController.swift */; };
 		452AFB7930164A8300D7A3DB /* AnyObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB7830164A8300D7A3DB /* AnyObserverViewController.swift */; };
 		452AFB7B301650C400D7A3DB /* SubjectKnowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB7A301650C400D7A3DB /* SubjectKnowViewController.swift */; };
+		452AFB8E301A524100D7A3DB /* NormalRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB8C301A524100D7A3DB /* NormalRegisterViewController.swift */; };
+		452AFB8F301A524100D7A3DB /* NormalRegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB86301A524100D7A3DB /* NormalRegisterService.swift */; };
+		452AFB90301A524100D7A3DB /* NormalRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB8A301A524100D7A3DB /* NormalRegisterViewModel.swift */; };
+		452AFB91301A524100D7A3DB /* NormalRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB88301A524100D7A3DB /* NormalRegisterView.swift */; };
+		452AFB92301A524100D7A3DB /* NormalRegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB84301A524100D7A3DB /* NormalRegisterProtocols.swift */; };
 		4593CE013014EF1400283356 /* FucntionProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4593CE003014EF1400283356 /* FucntionProgramViewController.swift */; };
 		4593CE033015062E00283356 /* ObservableKnowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4593CE023015062E00283356 /* ObservableKnowViewController.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +58,11 @@
 		452AFB763016353400D7A3DB /* SignalKnowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalKnowViewController.swift; sourceTree = "<group>"; };
 		452AFB7830164A8300D7A3DB /* AnyObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyObserverViewController.swift; sourceTree = "<group>"; };
 		452AFB7A301650C400D7A3DB /* SubjectKnowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectKnowViewController.swift; sourceTree = "<group>"; };
+		452AFB84301A524100D7A3DB /* NormalRegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalRegisterProtocols.swift; sourceTree = "<group>"; };
+		452AFB86301A524100D7A3DB /* NormalRegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalRegisterService.swift; sourceTree = "<group>"; };
+		452AFB88301A524100D7A3DB /* NormalRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalRegisterView.swift; sourceTree = "<group>"; };
+		452AFB8A301A524100D7A3DB /* NormalRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalRegisterViewModel.swift; sourceTree = "<group>"; };
+		452AFB8C301A524100D7A3DB /* NormalRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalRegisterViewController.swift; sourceTree = "<group>"; };
 		4593CE003014EF1400283356 /* FucntionProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FucntionProgramViewController.swift; sourceTree = "<group>"; };
 		4593CE023015062E00283356 /* ObservableKnowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableKnowViewController.swift; sourceTree = "<group>"; };
 		6835AFD7B9E2181871A55ED7 /* Pods-RxSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				41D1AC43301731CD00D14C88 /* MVVMKnowViewController.swift */,
+				452AFB8D301A524100D7A3DB /* NormalRegister */,
 				41D1AC4830173E1500D14C88 /* Register */,
 			);
 			path = MVVM;
@@ -141,6 +152,50 @@
 				417B479C3017477C00DBF8FF /* RegisterViewController.storyboard */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		452AFB85301A524100D7A3DB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				452AFB84301A524100D7A3DB /* NormalRegisterProtocols.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		452AFB87301A524100D7A3DB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				452AFB86301A524100D7A3DB /* NormalRegisterService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		452AFB89301A524100D7A3DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				452AFB88301A524100D7A3DB /* NormalRegisterView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		452AFB8B301A524100D7A3DB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				452AFB8A301A524100D7A3DB /* NormalRegisterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		452AFB8D301A524100D7A3DB /* NormalRegister */ = {
+			isa = PBXGroup;
+			children = (
+				452AFB8C301A524100D7A3DB /* NormalRegisterViewController.swift */,
+				452AFB8B301A524100D7A3DB /* ViewModel */,
+				452AFB87301A524100D7A3DB /* Service */,
+				452AFB85301A524100D7A3DB /* Protocol */,
+				452AFB89301A524100D7A3DB /* View */,
+			);
+			path = NormalRegister;
 			sourceTree = "<group>";
 		};
 		712F683FC2848F144112C885 /* Pods */ = {
@@ -296,6 +351,11 @@
 				4593CE013014EF1400283356 /* FucntionProgramViewController.swift in Sources */,
 				417B47B33018B4A200DBF8FF /* Wireframe.swift in Sources */,
 				417B47A83018394400DBF8FF /* RegisterProtocols.swift in Sources */,
+				452AFB8E301A524100D7A3DB /* NormalRegisterViewController.swift in Sources */,
+				452AFB8F301A524100D7A3DB /* NormalRegisterService.swift in Sources */,
+				452AFB90301A524100D7A3DB /* NormalRegisterViewModel.swift in Sources */,
+				452AFB91301A524100D7A3DB /* NormalRegisterView.swift in Sources */,
+				452AFB92301A524100D7A3DB /* NormalRegisterProtocols.swift in Sources */,
 				41D1AC44301731CD00D14C88 /* MVVMKnowViewController.swift in Sources */,
 				417B47B13018A8A100DBF8FF /* ActivityIndicator.swift in Sources */,
 			);
