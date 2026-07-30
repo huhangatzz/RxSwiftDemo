@@ -45,6 +45,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             guard let registerVC = sb.instantiateViewController(withIdentifier: "ImagePickerController") as? ImagePickerController else { return UIViewController() }
             return registerVC
         }),
+        Demos(title: "13.简单表格", content: "简单表格实战", makeVC: { SimpleTableViewController() }),
     ]
     
     override func viewDidLoad() {

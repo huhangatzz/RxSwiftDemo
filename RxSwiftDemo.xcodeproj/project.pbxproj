@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4185A1D1301B36C600C6DB8B /* RxImagePickerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1D0301B36C600C6DB8B /* RxImagePickerDelegateProxy.swift */; };
+		4185A1D8301B600000C6DB8B /* SimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1D7301B600000C6DB8B /* SimpleTableViewCell.swift */; };
 		417B479D3017477C00DBF8FF /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417B479C3017477C00DBF8FF /* RegisterViewController.storyboard */; };
 		417B479F30174B3500DBF8FF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B479E30174B3500DBF8FF /* RegisterViewModel.swift */; };
 		417B47A83018394400DBF8FF /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B47A73018394400DBF8FF /* RegisterProtocols.swift */; };
@@ -20,6 +20,8 @@
 		4185A1CB301B2D9100C6DB8B /* ImagePickerController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4185A1CA301B2D9100C6DB8B /* ImagePickerController.storyboard */; };
 		4185A1CD301B2EBB00C6DB8B /* UIImagePickerController+RxCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1CC301B2EBB00C6DB8B /* UIImagePickerController+RxCreate.swift */; };
 		4185A1CF301B300B00C6DB8B /* UIImagePickerController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1CE301B300B00C6DB8B /* UIImagePickerController+Rx.swift */; };
+		4185A1D1301B36C600C6DB8B /* RxImagePickerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1D0301B36C600C6DB8B /* RxImagePickerDelegateProxy.swift */; };
+		4185A1D6301B4D1300C6DB8B /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1D5301B4D1300C6DB8B /* SimpleTableViewController.swift */; };
 		41888C6435A1EDBC3E7B5CC9 /* Pods_RxSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2BB96E6F799043D731C2E3 /* Pods_RxSwiftDemo.framework */; };
 		41D1AC35301356ED00D14C88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1AC2E301356ED00D14C88 /* AppDelegate.swift */; };
 		41D1AC36301356ED00D14C88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1AC33301356ED00D14C88 /* ViewController.swift */; };
@@ -42,7 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4185A1D0301B36C600C6DB8B /* RxImagePickerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxImagePickerDelegateProxy.swift; sourceTree = "<group>"; };
+		4185A1D7301B600000C6DB8B /* SimpleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewCell.swift; sourceTree = "<group>"; };
 		417B479C3017477C00DBF8FF /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
 		417B479E30174B3500DBF8FF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		417B47A73018394400DBF8FF /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
@@ -55,6 +57,8 @@
 		4185A1CA301B2D9100C6DB8B /* ImagePickerController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImagePickerController.storyboard; sourceTree = "<group>"; };
 		4185A1CC301B2EBB00C6DB8B /* UIImagePickerController+RxCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+RxCreate.swift"; sourceTree = "<group>"; };
 		4185A1CE301B300B00C6DB8B /* UIImagePickerController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+Rx.swift"; sourceTree = "<group>"; };
+		4185A1D0301B36C600C6DB8B /* RxImagePickerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxImagePickerDelegateProxy.swift; sourceTree = "<group>"; };
+		4185A1D5301B4D1300C6DB8B /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		41D1AC163013565000D14C88 /* RxSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D1AC2E301356ED00D14C88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41D1AC2F301356ED00D14C88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,6 +108,15 @@
 			path = ImagePicker;
 			sourceTree = "<group>";
 		};
+		4185A1D4301B4CED00C6DB8B /* SimpleTableView */ = {
+			isa = PBXGroup;
+			children = (
+				4185A1D5301B4D1300C6DB8B /* SimpleTableViewController.swift */,
+				4185A1D7301B600000C6DB8B /* SimpleTableViewCell.swift */,
+			);
+			path = SimpleTableView;
+			sourceTree = "<group>";
+		};
 		41D1AC0D3013565000D14C88 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +140,7 @@
 			children = (
 				41D1AC2E301356ED00D14C88 /* AppDelegate.swift */,
 				41D1AC33301356ED00D14C88 /* ViewController.swift */,
+				4185A1D4301B4CED00C6DB8B /* SimpleTableView */,
 				4185A1C7301B2C3D00C6DB8B /* ImagePicker */,
 				41D1AC42301731B300D14C88 /* MVVM */,
 				41D1AC3A30135E2800D14C88 /* BasicInfo */,
@@ -370,6 +384,8 @@
 				452AFB773016353400D7A3DB /* SignalKnowViewController.swift in Sources */,
 				41D1AC36301356ED00D14C88 /* ViewController.swift in Sources */,
 				417B47AA3018461F00DBF8FF /* GitHubDefaultValidationService.swift in Sources */,
+				4185A1D6301B4D1300C6DB8B /* SimpleTableViewController.swift in Sources */,
+				4185A1D8301B600000C6DB8B /* SimpleTableViewCell.swift in Sources */,
 				417B479F30174B3500DBF8FF /* RegisterViewModel.swift in Sources */,
 				417B47AF30185AAD00DBF8FF /* RegisterBindingExtensions.swift in Sources */,
 				4593CE033015062E00283356 /* ObservableKnowViewController.swift in Sources */,
