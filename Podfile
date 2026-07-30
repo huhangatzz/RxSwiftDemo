@@ -6,9 +6,10 @@ target 'RxSwiftDemo' do
   use_frameworks!
 
   # Pods for RxSwiftDemo
-  pod 'RxSwift', :subspecs => ['Resources'] #RxSwift编译时自动开启 TRACE_RESOURCES
+  pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SnapKit'
+  pod 'MJRefresh'
 
 end
 
