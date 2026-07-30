@@ -40,6 +40,7 @@
 		452AFB90301A524100D7A3DB /* NormalRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB8A301A524100D7A3DB /* NormalRegisterViewModel.swift */; };
 		452AFB91301A524100D7A3DB /* NormalRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB88301A524100D7A3DB /* NormalRegisterView.swift */; };
 		452AFB92301A524100D7A3DB /* NormalRegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFB84301A524100D7A3DB /* NormalRegisterProtocols.swift */; };
+		452AFDAA301B8C6400D7A3DB /* SectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AFDA9301B8C6400D7A3DB /* SectionTableViewController.swift */; };
 		4593CE013014EF1400283356 /* FucntionProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4593CE003014EF1400283356 /* FucntionProgramViewController.swift */; };
 		4593CE033015062E00283356 /* ObservableKnowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4593CE023015062E00283356 /* ObservableKnowViewController.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		452AFB88301A524100D7A3DB /* NormalRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalRegisterView.swift; sourceTree = "<group>"; };
 		452AFB8A301A524100D7A3DB /* NormalRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalRegisterViewModel.swift; sourceTree = "<group>"; };
 		452AFB8C301A524100D7A3DB /* NormalRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalRegisterViewController.swift; sourceTree = "<group>"; };
+		452AFDA9301B8C6400D7A3DB /* SectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTableViewController.swift; sourceTree = "<group>"; };
 		4593CE003014EF1400283356 /* FucntionProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FucntionProgramViewController.swift; sourceTree = "<group>"; };
 		4593CE023015062E00283356 /* ObservableKnowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableKnowViewController.swift; sourceTree = "<group>"; };
 		6835AFD7B9E2181871A55ED7 /* Pods-RxSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				41D1AC2E301356ED00D14C88 /* AppDelegate.swift */,
 				41D1AC33301356ED00D14C88 /* ViewController.swift */,
+				452AFDA8301B8C5300D7A3DB /* SectionTableView */,
 				4185A1D4301B4CED00C6DB8B /* SimpleTableView */,
 				4185A1C7301B2C3D00C6DB8B /* ImagePicker */,
 				41D1AC42301731B300D14C88 /* MVVM */,
@@ -236,6 +239,14 @@
 				452AFB89301A524100D7A3DB /* View */,
 			);
 			path = NormalRegister;
+			sourceTree = "<group>";
+		};
+		452AFDA8301B8C5300D7A3DB /* SectionTableView */ = {
+			isa = PBXGroup;
+			children = (
+				452AFDA9301B8C6400D7A3DB /* SectionTableViewController.swift */,
+			);
+			path = SectionTableView;
 			sourceTree = "<group>";
 		};
 		712F683FC2848F144112C885 /* Pods */ = {
@@ -356,9 +367,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -395,6 +410,7 @@
 				417B47A83018394400DBF8FF /* RegisterProtocols.swift in Sources */,
 				452AFB8E301A524100D7A3DB /* NormalRegisterViewController.swift in Sources */,
 				4185A1CF301B300B00C6DB8B /* UIImagePickerController+Rx.swift in Sources */,
+				452AFDAA301B8C6400D7A3DB /* SectionTableViewController.swift in Sources */,
 				452AFB8F301A524100D7A3DB /* NormalRegisterService.swift in Sources */,
 				452AFB90301A524100D7A3DB /* NormalRegisterViewModel.swift in Sources */,
 				4185A1C9301B2C7A00C6DB8B /* ImagePickerController.swift in Sources */,

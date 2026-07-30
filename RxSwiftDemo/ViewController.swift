@@ -40,12 +40,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             guard let registerVC = sb.instantiateViewController(withIdentifier: "ImagePickerController") as? ImagePickerController else { return UIViewController() }
             return registerVC
         }),
-        Demos(title: "12.RxSwift相机和图片", content: "RxSwift 实战图片展示页面", makeVC: {
-            let sb = UIStoryboard(name: "ImagePickerController", bundle: nil)
-            guard let registerVC = sb.instantiateViewController(withIdentifier: "ImagePickerController") as? ImagePickerController else { return UIViewController() }
-            return registerVC
-        }),
-        Demos(title: "13.简单表格", content: "简单表格实战", makeVC: { SimpleTableViewController() }),
+        Demos(title: "12.简单表格", content: "简单表格实战", makeVC: { SimpleTableViewController() }),
+        Demos(title: "13.分区表格", content: "简单的头部分区视图", makeVC: { SectionTableViewController() }),
     ]
     
     override func viewDidLoad() {
