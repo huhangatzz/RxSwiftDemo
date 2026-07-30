@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4185A1D1301B36C600C6DB8B /* RxImagePickerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1D0301B36C600C6DB8B /* RxImagePickerDelegateProxy.swift */; };
 		417B479D3017477C00DBF8FF /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417B479C3017477C00DBF8FF /* RegisterViewController.storyboard */; };
 		417B479F30174B3500DBF8FF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B479E30174B3500DBF8FF /* RegisterViewModel.swift */; };
 		417B47A83018394400DBF8FF /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B47A73018394400DBF8FF /* RegisterProtocols.swift */; };
@@ -15,6 +16,10 @@
 		417B47AF30185AAD00DBF8FF /* RegisterBindingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B47AE30185AAD00DBF8FF /* RegisterBindingExtensions.swift */; };
 		417B47B13018A8A100DBF8FF /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B47B03018A8A100DBF8FF /* ActivityIndicator.swift */; };
 		417B47B33018B4A200DBF8FF /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B47B23018B4A200DBF8FF /* Wireframe.swift */; };
+		4185A1C9301B2C7A00C6DB8B /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1C8301B2C7A00C6DB8B /* ImagePickerController.swift */; };
+		4185A1CB301B2D9100C6DB8B /* ImagePickerController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4185A1CA301B2D9100C6DB8B /* ImagePickerController.storyboard */; };
+		4185A1CD301B2EBB00C6DB8B /* UIImagePickerController+RxCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1CC301B2EBB00C6DB8B /* UIImagePickerController+RxCreate.swift */; };
+		4185A1CF301B300B00C6DB8B /* UIImagePickerController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1CE301B300B00C6DB8B /* UIImagePickerController+Rx.swift */; };
 		41888C6435A1EDBC3E7B5CC9 /* Pods_RxSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2BB96E6F799043D731C2E3 /* Pods_RxSwiftDemo.framework */; };
 		41D1AC35301356ED00D14C88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1AC2E301356ED00D14C88 /* AppDelegate.swift */; };
 		41D1AC36301356ED00D14C88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1AC33301356ED00D14C88 /* ViewController.swift */; };
@@ -37,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4185A1D0301B36C600C6DB8B /* RxImagePickerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxImagePickerDelegateProxy.swift; sourceTree = "<group>"; };
 		417B479C3017477C00DBF8FF /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
 		417B479E30174B3500DBF8FF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		417B47A73018394400DBF8FF /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
@@ -45,6 +51,10 @@
 		417B47AE30185AAD00DBF8FF /* RegisterBindingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBindingExtensions.swift; sourceTree = "<group>"; };
 		417B47B03018A8A100DBF8FF /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		417B47B23018B4A200DBF8FF /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
+		4185A1C8301B2C7A00C6DB8B /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
+		4185A1CA301B2D9100C6DB8B /* ImagePickerController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImagePickerController.storyboard; sourceTree = "<group>"; };
+		4185A1CC301B2EBB00C6DB8B /* UIImagePickerController+RxCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+RxCreate.swift"; sourceTree = "<group>"; };
+		4185A1CE301B300B00C6DB8B /* UIImagePickerController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+Rx.swift"; sourceTree = "<group>"; };
 		41D1AC163013565000D14C88 /* RxSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D1AC2E301356ED00D14C88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41D1AC2F301356ED00D14C88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +92,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4185A1C7301B2C3D00C6DB8B /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				4185A1C8301B2C7A00C6DB8B /* ImagePickerController.swift */,
+				4185A1D0301B36C600C6DB8B /* RxImagePickerDelegateProxy.swift */,
+				4185A1CC301B2EBB00C6DB8B /* UIImagePickerController+RxCreate.swift */,
+				4185A1CE301B300B00C6DB8B /* UIImagePickerController+Rx.swift */,
+				4185A1CA301B2D9100C6DB8B /* ImagePickerController.storyboard */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
 		41D1AC0D3013565000D14C88 = {
 			isa = PBXGroup;
 			children = (
@@ -105,8 +127,9 @@
 			children = (
 				41D1AC2E301356ED00D14C88 /* AppDelegate.swift */,
 				41D1AC33301356ED00D14C88 /* ViewController.swift */,
+				4185A1C7301B2C3D00C6DB8B /* ImagePicker */,
 				41D1AC42301731B300D14C88 /* MVVM */,
-				41D1AC3A30135E2800D14C88 /* demos */,
+				41D1AC3A30135E2800D14C88 /* BasicInfo */,
 				41D1AC2F301356ED00D14C88 /* Assets.xcassets */,
 				41D1AC30301356ED00D14C88 /* Info.plist */,
 				41D1AC32301356ED00D14C88 /* LaunchScreen.storyboard */,
@@ -114,7 +137,7 @@
 			path = RxSwiftDemo;
 			sourceTree = "<group>";
 		};
-		41D1AC3A30135E2800D14C88 /* demos */ = {
+		41D1AC3A30135E2800D14C88 /* BasicInfo */ = {
 			isa = PBXGroup;
 			children = (
 				41D1AC3B3013605300D14C88 /* SimpleValidationViewController.swift */,
@@ -125,7 +148,7 @@
 				452AFB7A301650C400D7A3DB /* SubjectKnowViewController.swift */,
 				41D1AC403016E9C100D14C88 /* OperatorSelectViewController.swift */,
 			);
-			path = demos;
+			path = BasicInfo;
 			sourceTree = "<group>";
 		};
 		41D1AC42301731B300D14C88 /* MVVM */ = {
@@ -278,6 +301,7 @@
 			files = (
 				417B479D3017477C00DBF8FF /* RegisterViewController.storyboard in Resources */,
 				41D1AC37301356ED00D14C88 /* Assets.xcassets in Resources */,
+				4185A1CB301B2D9100C6DB8B /* ImagePickerController.storyboard in Resources */,
 				41D1AC39301356ED00D14C88 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,8 +360,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				452AFB7B301650C400D7A3DB /* SubjectKnowViewController.swift in Sources */,
+				4185A1D1301B36C600C6DB8B /* RxImagePickerDelegateProxy.swift in Sources */,
 				41D1AC4A30173E3200D14C88 /* RegisterViewController.swift in Sources */,
 				41D1AC35301356ED00D14C88 /* AppDelegate.swift in Sources */,
+				4185A1CD301B2EBB00C6DB8B /* UIImagePickerController+RxCreate.swift in Sources */,
 				41D1AC413016E9C100D14C88 /* OperatorSelectViewController.swift in Sources */,
 				452AFB7930164A8300D7A3DB /* AnyObserverViewController.swift in Sources */,
 				417B47AD30184BD400DBF8FF /* String+URL.swift in Sources */,
@@ -352,8 +378,10 @@
 				417B47B33018B4A200DBF8FF /* Wireframe.swift in Sources */,
 				417B47A83018394400DBF8FF /* RegisterProtocols.swift in Sources */,
 				452AFB8E301A524100D7A3DB /* NormalRegisterViewController.swift in Sources */,
+				4185A1CF301B300B00C6DB8B /* UIImagePickerController+Rx.swift in Sources */,
 				452AFB8F301A524100D7A3DB /* NormalRegisterService.swift in Sources */,
 				452AFB90301A524100D7A3DB /* NormalRegisterViewModel.swift in Sources */,
+				4185A1C9301B2C7A00C6DB8B /* ImagePickerController.swift in Sources */,
 				452AFB91301A524100D7A3DB /* NormalRegisterView.swift in Sources */,
 				452AFB92301A524100D7A3DB /* NormalRegisterProtocols.swift in Sources */,
 				41D1AC44301731CD00D14C88 /* MVVMKnowViewController.swift in Sources */,

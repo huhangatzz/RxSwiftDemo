@@ -35,6 +35,16 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         Demos(title: "10.手机验证码登录", content: "RxSwift 实战登录页面", makeVC: {
             NormalRegisterViewController()
         }),
+        Demos(title: "11.选择系统相机和图片", content: "原生图片展示页面", makeVC: {
+            let sb = UIStoryboard(name: "ImagePickerController", bundle: nil)
+            guard let registerVC = sb.instantiateViewController(withIdentifier: "ImagePickerController") as? ImagePickerController else { return UIViewController() }
+            return registerVC
+        }),
+        Demos(title: "12.RxSwift相机和图片", content: "RxSwift 实战图片展示页面", makeVC: {
+            let sb = UIStoryboard(name: "ImagePickerController", bundle: nil)
+            guard let registerVC = sb.instantiateViewController(withIdentifier: "ImagePickerController") as? ImagePickerController else { return UIViewController() }
+            return registerVC
+        }),
     ]
     
     override func viewDidLoad() {
