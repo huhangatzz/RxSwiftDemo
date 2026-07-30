@@ -58,6 +58,7 @@ final class NormalRegisterViewController: UIViewController {
         //“协议未勾选”的点击获取验证码
         viewModel.agreementRequired
             .subscribe(onNext: { [weak self] in
+                //只要收到消息就抖动
                 self?.registerView.showAgreementRequiredFeedback()
             })
             .disposed(by: disposeBag)
