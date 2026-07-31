@@ -23,6 +23,11 @@
 		4185A1D6301B4D1300C6DB8B /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1D5301B4D1300C6DB8B /* SimpleTableViewController.swift */; };
 		4185A1D8301B600000C6DB8B /* SimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1D7301B600000C6DB8B /* SimpleTableViewCell.swift */; };
 		4185A1DA301B600000C6DB8B /* UIScrollView+MJRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1D9301B600000C6DB8B /* UIScrollView+MJRefresh.swift */; };
+		4185A1DD301C943D00C6DB8B /* MoyaNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1DC301C943D00C6DB8B /* MoyaNetworkManager.swift */; };
+		4185A1DF301C953800C6DB8B /* MoyaProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1DE301C953800C6DB8B /* MoyaProviderExtension.swift */; };
+		4185A1E1301C96E800C6DB8B /* MoyaNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1E0301C96E800C6DB8B /* MoyaNetworkService.swift */; };
+		4185A1E4301C9BD700C6DB8B /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1E3301C9BD700C6DB8B /* CurrentUser.swift */; };
+		4185A1E6301CA17300C6DB8B /* LoginTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1E5301CA17300C6DB8B /* LoginTestViewController.swift */; };
 		41888C6435A1EDBC3E7B5CC9 /* Pods_RxSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2BB96E6F799043D731C2E3 /* Pods_RxSwiftDemo.framework */; };
 		41D1AC35301356ED00D14C88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1AC2E301356ED00D14C88 /* AppDelegate.swift */; };
 		41D1AC36301356ED00D14C88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1AC33301356ED00D14C88 /* ViewController.swift */; };
@@ -62,6 +67,11 @@
 		4185A1D5301B4D1300C6DB8B /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		4185A1D7301B600000C6DB8B /* SimpleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewCell.swift; sourceTree = "<group>"; };
 		4185A1D9301B600000C6DB8B /* UIScrollView+MJRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+MJRefresh.swift"; sourceTree = "<group>"; };
+		4185A1DC301C943D00C6DB8B /* MoyaNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaNetworkManager.swift; sourceTree = "<group>"; };
+		4185A1DE301C953800C6DB8B /* MoyaProviderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaProviderExtension.swift; sourceTree = "<group>"; };
+		4185A1E0301C96E800C6DB8B /* MoyaNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaNetworkService.swift; sourceTree = "<group>"; };
+		4185A1E3301C9BD700C6DB8B /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		4185A1E5301CA17300C6DB8B /* LoginTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestViewController.swift; sourceTree = "<group>"; };
 		41D1AC163013565000D14C88 /* RxSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D1AC2E301356ED00D14C88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41D1AC2F301356ED00D14C88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,6 +132,25 @@
 			path = SimpleTableView;
 			sourceTree = "<group>";
 		};
+		4185A1DB301C941500C6DB8B /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				4185A1DC301C943D00C6DB8B /* MoyaNetworkManager.swift */,
+				4185A1E0301C96E800C6DB8B /* MoyaNetworkService.swift */,
+				4185A1DE301C953800C6DB8B /* MoyaProviderExtension.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		4185A1E2301C9BB900C6DB8B /* LoginTest */ = {
+			isa = PBXGroup;
+			children = (
+				4185A1E3301C9BD700C6DB8B /* CurrentUser.swift */,
+				4185A1E5301CA17300C6DB8B /* LoginTestViewController.swift */,
+			);
+			path = LoginTest;
+			sourceTree = "<group>";
+		};
 		41D1AC0D3013565000D14C88 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +174,8 @@
 			children = (
 				41D1AC2E301356ED00D14C88 /* AppDelegate.swift */,
 				41D1AC33301356ED00D14C88 /* ViewController.swift */,
+				4185A1E2301C9BB900C6DB8B /* LoginTest */,
+				4185A1DB301C941500C6DB8B /* NetworkManager */,
 				452AFDA8301B8C5300D7A3DB /* SectionTableView */,
 				4185A1D4301B4CED00C6DB8B /* SimpleTableView */,
 				4185A1C7301B2C3D00C6DB8B /* ImagePicker */,
@@ -392,8 +423,10 @@
 				41D1AC4A30173E3200D14C88 /* RegisterViewController.swift in Sources */,
 				41D1AC35301356ED00D14C88 /* AppDelegate.swift in Sources */,
 				4185A1CD301B2EBB00C6DB8B /* UIImagePickerController+RxCreate.swift in Sources */,
+				4185A1E4301C9BD700C6DB8B /* CurrentUser.swift in Sources */,
 				41D1AC413016E9C100D14C88 /* OperatorSelectViewController.swift in Sources */,
 				452AFB7930164A8300D7A3DB /* AnyObserverViewController.swift in Sources */,
+				4185A1E6301CA17300C6DB8B /* LoginTestViewController.swift in Sources */,
 				417B47AD30184BD400DBF8FF /* String+URL.swift in Sources */,
 				452AFB773016353400D7A3DB /* SignalKnowViewController.swift in Sources */,
 				41D1AC36301356ED00D14C88 /* ViewController.swift in Sources */,
@@ -401,7 +434,9 @@
 				4185A1D6301B4D1300C6DB8B /* SimpleTableViewController.swift in Sources */,
 				4185A1D8301B600000C6DB8B /* SimpleTableViewCell.swift in Sources */,
 				4185A1DA301B600000C6DB8B /* UIScrollView+MJRefresh.swift in Sources */,
+				4185A1DD301C943D00C6DB8B /* MoyaNetworkManager.swift in Sources */,
 				417B479F30174B3500DBF8FF /* RegisterViewModel.swift in Sources */,
+				4185A1E1301C96E800C6DB8B /* MoyaNetworkService.swift in Sources */,
 				417B47AF30185AAD00DBF8FF /* RegisterBindingExtensions.swift in Sources */,
 				4593CE033015062E00283356 /* ObservableKnowViewController.swift in Sources */,
 				41D1AC3C3013605300D14C88 /* SimpleValidationViewController.swift in Sources */,
@@ -416,6 +451,7 @@
 				4185A1C9301B2C7A00C6DB8B /* ImagePickerController.swift in Sources */,
 				452AFB91301A524100D7A3DB /* NormalRegisterView.swift in Sources */,
 				452AFB92301A524100D7A3DB /* NormalRegisterProtocols.swift in Sources */,
+				4185A1DF301C953800C6DB8B /* MoyaProviderExtension.swift in Sources */,
 				41D1AC44301731CD00D14C88 /* MVVMKnowViewController.swift in Sources */,
 				417B47B13018A8A100DBF8FF /* ActivityIndicator.swift in Sources */,
 			);

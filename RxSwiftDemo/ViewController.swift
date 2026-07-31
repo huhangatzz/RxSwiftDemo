@@ -42,6 +42,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         }),
         Demos(title: "12.简单表格", content: "简单表格实战", makeVC: { SimpleTableViewController() }),
         Demos(title: "13.分区表格", content: "简单的头部分区视图", makeVC: { SectionTableViewController() }),
+        Demos(title: "14.登录接口测试", content: "封装Moya网络请求工具类", makeVC: { LoginTestViewController() }),
     ]
     
     override func viewDidLoad() {

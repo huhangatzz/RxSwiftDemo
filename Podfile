@@ -10,6 +10,7 @@ target 'RxSwiftDemo' do
   pod 'RxCocoa'
   pod 'SnapKit'
   pod 'MJRefresh'
+  pod 'Moya'
 
 end
 
