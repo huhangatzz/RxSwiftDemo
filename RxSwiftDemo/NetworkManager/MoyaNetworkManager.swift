@@ -17,15 +17,9 @@ class MoyaNetworkManager {
     
     private var provider: MoyaProvider<MoyaNetworkService>!
     
-    func sendVerificationCode(
-        phone: String,
-        type: String
-    ) -> Observable<DataResponse<[EmptyResponseData]>> {
-        provider.runRequestRx(.sendVerificationCode(phone: phone, type: type))
-    }
-
-    func loginRx(data: LoginRequestParam) -> Observable<DataResponse<CurrentUser>> {
-        provider.runRequestRx(.login(data: data))
+    /// 通用 RxSwift 请求，新增业务接口时无需修改 Manager。
+    func requestRx<T: BaseResponse>(_ target: MoyaNetworkService, as responseType: T.Type) -> Observable<T> {
+        provider.runRequestRx(target)
     }
     
     private init() {

@@ -24,15 +24,13 @@ final class DefaultNormalRegisterAPI: NormalRegisterAPI {
 
     func sendVerificationCode(phone: String, type: String) -> Observable<NormalRegisterResponse> {
         mapResponse(
-            networkManager.sendVerificationCode(phone: phone, type: type)
+            networkManager.requestRx(.sendVerificationCode(phone: phone, type: type), as: DataResponse<[EmptyResponseData]>.self)
         )
     }
 
     func login(phone: String, code: String) -> Observable<NormalRegisterResponse> {
         mapResponse(
-            networkManager.loginRx(
-                data: LoginRequestParam(phone: phone, code: code)
-            )
+            networkManager.requestRx(.login(data: LoginRequestParam(phone: phone, code: code)), as: DataResponse<CurrentUser>.self)
         )
     }
 
