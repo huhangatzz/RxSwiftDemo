@@ -27,7 +27,6 @@
 		4185A1DF301C953800C6DB8B /* MoyaProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1DE301C953800C6DB8B /* MoyaProviderExtension.swift */; };
 		4185A1E1301C96E800C6DB8B /* MoyaNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1E0301C96E800C6DB8B /* MoyaNetworkService.swift */; };
 		4185A1E4301C9BD700C6DB8B /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1E3301C9BD700C6DB8B /* CurrentUser.swift */; };
-		4185A1E6301CA17300C6DB8B /* LoginTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185A1E5301CA17300C6DB8B /* LoginTestViewController.swift */; };
 		41888C6435A1EDBC3E7B5CC9 /* Pods_RxSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2BB96E6F799043D731C2E3 /* Pods_RxSwiftDemo.framework */; };
 		41D1AC35301356ED00D14C88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1AC2E301356ED00D14C88 /* AppDelegate.swift */; };
 		41D1AC36301356ED00D14C88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1AC33301356ED00D14C88 /* ViewController.swift */; };
@@ -71,7 +70,6 @@
 		4185A1DE301C953800C6DB8B /* MoyaProviderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaProviderExtension.swift; sourceTree = "<group>"; };
 		4185A1E0301C96E800C6DB8B /* MoyaNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaNetworkService.swift; sourceTree = "<group>"; };
 		4185A1E3301C9BD700C6DB8B /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
-		4185A1E5301CA17300C6DB8B /* LoginTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestViewController.swift; sourceTree = "<group>"; };
 		41D1AC163013565000D14C88 /* RxSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D1AC2E301356ED00D14C88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41D1AC2F301356ED00D14C88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				4185A1E3301C9BD700C6DB8B /* CurrentUser.swift */,
-				4185A1E5301CA17300C6DB8B /* LoginTestViewController.swift */,
 			);
 			path = LoginTest;
 			sourceTree = "<group>";
@@ -426,7 +423,6 @@
 				4185A1E4301C9BD700C6DB8B /* CurrentUser.swift in Sources */,
 				41D1AC413016E9C100D14C88 /* OperatorSelectViewController.swift in Sources */,
 				452AFB7930164A8300D7A3DB /* AnyObserverViewController.swift in Sources */,
-				4185A1E6301CA17300C6DB8B /* LoginTestViewController.swift in Sources */,
 				417B47AD30184BD400DBF8FF /* String+URL.swift in Sources */,
 				452AFB773016353400D7A3DB /* SignalKnowViewController.swift in Sources */,
 				41D1AC36301356ED00D14C88 /* ViewController.swift in Sources */,

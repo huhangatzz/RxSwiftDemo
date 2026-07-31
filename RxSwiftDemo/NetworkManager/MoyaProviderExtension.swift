@@ -7,6 +7,7 @@
 
 import UIKit
 import Moya
+import RxSwift
 
 //错误类型
 enum CommonError: Error {
@@ -47,42 +48,32 @@ class DataResponse<T: Codable>: BaseResponse {
 //封装的网络工具类
 // 扩展MoyaProvider，泛型Target为Moya TargetType
 extension MoyaProvider {
-    /// 通用网络请求封装，async/await风格
-    /// - Parameter target: Moya接口Target
-    /// - Returns: 解析后的BaseResponse子类对象，可选
-    func runRequest<T: BaseResponse>(_ target: Target) async throws -> T? {
-        do {
-            // 1. 将Moya回调API桥接为async await（withCheckedThrowingContinuation桥接回调）
-            let response = try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Response, Error>) in
-                // 原始Moya回调请求
-                self.request(target) { result in
-                    switch result {
-                    case .success(let r):
-                        // 请求成功，把Response丢给async流程
-                        continuation.resume(returning: r)
-                    case .failure(let error):
-                        // 网络层面失败（超时、无网、连接失败等），抛出错误
-                        continuation.resume(throwing: error)
+    // 1.通用网络请求封装，RxSwift 风格。订阅被释放时会同步取消 Moya 请求。
+    func runRequestRx<T: BaseResponse>(_ target: Target) -> Observable<T> {
+        Observable.create { observer in
+            let cancellable = self.request(target) { result in
+                do {
+                    // 2. 过滤HTTP状态码：非200~299直接抛Moya.MoyaError
+                    let response = try result.get().filterSuccessfulStatusCodes()
+                    
+                    // 3. JSON自动解码为泛型T（必须继承BaseResponse且遵守Codable）
+                    let decodedObject = try response.map(T.self)
+
+                    // 4. 业务层判断：后端约定status=200才代表成功，非200抛业务错误
+                    guard decodedObject.code == 200 else {
+                        throw CommonError.networkResponse(decodedObject)
                     }
+
+                    observer.onNext(decodedObject)
+                    observer.onCompleted()
+                } catch {
+                    observer.onError(error)
                 }
             }
-            
-            // 2. 过滤HTTP状态码：非200~299直接抛Moya.MoyaError
-            let filteredResponse = try response.filterSuccessfulStatusCodes()
-            
-            // 3. JSON自动解码为泛型T（必须继承BaseResponse且遵守Codable）
-            let decodedObject = try filteredResponse.map(T.self)
-            
-            // 4. 业务层判断：后端约定status=200才代表成功，非200抛业务错误
-            if decodedObject.code != 200 {
-                throw CommonError.networkResponse(decodedObject)
+
+            return Disposables.create {
+                cancellable.cancel()
             }
-            
-            // 成功返回解析好的模型
-            return decodedObject
-        } catch {
-            // 所有层级错误统一上抛给外部调用方处理
-            throw error
         }
     }
 }

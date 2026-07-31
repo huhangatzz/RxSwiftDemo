@@ -7,6 +7,9 @@
 
 import Foundation
 import Moya
+import RxSwift
+
+struct EmptyResponseData: Codable {}
 
 //网络请求的仓库
 class MoyaNetworkManager {
@@ -14,8 +17,15 @@ class MoyaNetworkManager {
     
     private var provider: MoyaProvider<MoyaNetworkService>!
     
-    func login(data: LoginRequestParam) async throws -> DataResponse<CurrentUser>? {
-        return try await provider.runRequest(.login(data: data))
+    func sendVerificationCode(
+        phone: String,
+        type: String
+    ) -> Observable<DataResponse<[EmptyResponseData]>> {
+        provider.runRequestRx(.sendVerificationCode(phone: phone, type: type))
+    }
+
+    func loginRx(data: LoginRequestParam) -> Observable<DataResponse<CurrentUser>> {
+        provider.runRequestRx(.login(data: data))
     }
     
     private init() {
@@ -37,4 +47,3 @@ class MoyaNetworkManager {
         provider = MoyaProvider<MoyaNetworkService>(requestClosure: requestClosure, plugins: plugins)
     }
 }
-

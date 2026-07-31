@@ -11,6 +11,7 @@ import Alamofire
 
 //Moya接口封装
 enum MoyaNetworkService {
+    case sendVerificationCode(phone: String, type: String)
     case login(data: LoginRequestParam)
 }
 
@@ -21,42 +22,43 @@ extension MoyaNetworkService: TargetType {
     
     var path: String {
         switch self {
-            
+        case .sendVerificationCode:
+            return "/send"
         case .login:
             return "/home/app/login"
-            
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .login:
+        case .sendVerificationCode, .login:
             return .post
-        default:
-            return .get
         }
     }
     
     var task: Moya.Task {
         switch self {
-        
+        case let .sendVerificationCode(phone, type):
+            return .requestParameters(
+                parameters: [
+                    "phone": phone,
+                    "type": type
+                ],
+                encoding: JSONEncoding.default
+            )
         case let .login(data):
             return .requestJSONEncodable(data)
-            
-//        case let .contents(style):
-//            return .requestParameters(parameters: ["style": style], encoding: URLEncoding.queryString)
-        
-        default:
-            return .requestPlain
         }
     }
     
     var headers: [String : String]? {
-        var headers:Dictionary<String,String> = [:]
-        headers["Content-Type"] = "application/json"
-        
-        //登录成功后,才会有session
-        
-        return headers
+        [
+            "Content-Type": "application/json",
+            "User-Agent": "zhikon/1.3.22 (iPhone; iOS 26.5.2; Scale/3.00)",
+            "Accept-Language": "zh-Hans-CN;q=1",
+            "Accept": "*/*",
+            "deviceCode": "",
+            "Accept-Encoding": "gzip, deflate"
+        ]
     }
 }
