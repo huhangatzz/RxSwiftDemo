@@ -9,19 +9,19 @@ import UIKit
 import Moya
 import RxSwift
 
-//错误类型
+// 错误类型
 enum CommonError: Error {
     case networkResponse(BaseResponse)
     case userNotFound
 }
 
-//根据接口返回的结果定义的根模型
+// 根据接口返回的结果定义的根模型
 class BaseResponse : Codable {
     var code: Int = 0
     var msg: String? = nil
 }
 
-//详情接口返回数据
+// 详情接口返回数据
 class DataResponse<T: Codable>: BaseResponse {
     // 业务详情数据，可选：接口无data字段、data为null时为nil
     var data: T?
@@ -32,7 +32,7 @@ class DataResponse<T: Codable>: BaseResponse {
     }
     
     // 自定义解码器构造方法，实现Codable手动解码
-    //为什么这里需要自定义解码器:子类、父类如果各自有独立 CodingKeys，自动生成的解码逻辑不能同时解析父子两层 key，会只解析子类自己的 data，丢失父类 status/message。
+    // 为什么这里需要自定义解码器:子类、父类如果各自有独立 CodingKeys，自动生成的解码逻辑不能同时解析父子两层 key，会只解析子类自己的 data，丢失父类 status/message。
     required init(from decoder: Decoder) throws {
         // 取出当前类CodingKeys对应的解码容器
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -45,7 +45,7 @@ class DataResponse<T: Codable>: BaseResponse {
     }
 }
 
-//封装的网络工具类
+// 封装的网络工具类
 // 扩展MoyaProvider，泛型Target为Moya TargetType
 extension MoyaProvider {
     // 1.通用网络请求封装，RxSwift 风格。订阅被释放时会同步取消 Moya 请求。

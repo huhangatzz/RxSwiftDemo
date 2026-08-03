@@ -70,7 +70,6 @@ final class NormalRegisterViewModel {
                 API.sendVerificationCode(phone: phone, type: "login")
                     .trackActivity(sendingCode)
                     .observe(on: MainScheduler.instance)
-                    .catchAndReturn(.init(success: false, message: "无法连接服务器", data: nil))
             }
             .share(replay: 1)
 
@@ -141,7 +140,6 @@ final class NormalRegisterViewModel {
                 API.login(phone: pair.phone, code: pair.code)
                     .trackActivity(loggingIn)
                     .observe(on: MainScheduler.instance)
-                    .catchAndReturn(.init(success: false, message: "无法连接服务器", data: nil))
             }
             .flatMapLatest { response in
                 wireframe.promptFor(response.message, cancelAction: "确定", actions: [])

@@ -9,10 +9,10 @@ import Foundation
 import Moya
 import Alamofire
 
-//Moya接口封装
+// Moya接口封装
 enum MoyaNetworkService {
     case sendVerificationCode(phone: String, type: String)
-    case login(data: LoginRequestParam)
+    case login(phone: String, code: String)
 }
 
 extension MoyaNetworkService: TargetType {
@@ -43,11 +43,14 @@ extension MoyaNetworkService: TargetType {
                 parameters: [
                     "phone": phone,
                     "type": type
-                ],
-                encoding: JSONEncoding.default
+                ],encoding: JSONEncoding.default
             )
-        case let .login(data):
-            return .requestJSONEncodable(data)
+        case let .login(phone, code):
+            return .requestParameters(
+                parameters:
+                    ["phone": phone,
+                     "code": code
+                    ], encoding: JSONEncoding.default)
         }
     }
     

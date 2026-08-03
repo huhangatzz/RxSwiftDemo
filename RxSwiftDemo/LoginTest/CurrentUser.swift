@@ -7,11 +7,6 @@
 
 import UIKit
 
-struct LoginRequestParam: Codable {
-    var phone: String?
-    var code: String?
-}
-
 // MARK: - ZKUserInfoModel Swift版本
 struct CurrentUser: Identifiable, Codable, Hashable {
     var id: String? = nil
