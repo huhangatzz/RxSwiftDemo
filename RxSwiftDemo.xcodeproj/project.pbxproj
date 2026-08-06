@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		410E4FF63022D96A007F7567 /* OtherKnowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E4FF53022D96A007F7567 /* OtherKnowViewController.swift */; };
+		410E4FF830242053007F7567 /* MyMapStudy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E4FF730242053007F7567 /* MyMapStudy.swift */; };
 		417B479D3017477C00DBF8FF /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417B479C3017477C00DBF8FF /* RegisterViewController.storyboard */; };
 		417B479F30174B3500DBF8FF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B479E30174B3500DBF8FF /* RegisterViewModel.swift */; };
 		417B47A83018394400DBF8FF /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B47A73018394400DBF8FF /* RegisterProtocols.swift */; };
@@ -50,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		410E4FF53022D96A007F7567 /* OtherKnowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherKnowViewController.swift; sourceTree = "<group>"; };
+		410E4FF730242053007F7567 /* MyMapStudy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapStudy.swift; sourceTree = "<group>"; };
 		417B479C3017477C00DBF8FF /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
 		417B479E30174B3500DBF8FF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		417B47A73018394400DBF8FF /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
@@ -108,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		410E4FF43022D959007F7567 /* OtherKnow */ = {
+			isa = PBXGroup;
+			children = (
+				410E4FF53022D96A007F7567 /* OtherKnowViewController.swift */,
+				410E4FF730242053007F7567 /* MyMapStudy.swift */,
+			);
+			path = OtherKnow;
+			sourceTree = "<group>";
+		};
 		4185A1C7301B2C3D00C6DB8B /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +184,7 @@
 			children = (
 				41D1AC2E301356ED00D14C88 /* AppDelegate.swift */,
 				41D1AC33301356ED00D14C88 /* ViewController.swift */,
+				410E4FF43022D959007F7567 /* OtherKnow */,
 				4185A1E2301C9BB900C6DB8B /* LoginTest */,
 				4185A1DB301C941500C6DB8B /* NetworkManager */,
 				452AFDA8301B8C5300D7A3DB /* SectionTableView */,
@@ -415,8 +429,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				410E4FF63022D96A007F7567 /* OtherKnowViewController.swift in Sources */,
 				452AFB7B301650C400D7A3DB /* SubjectKnowViewController.swift in Sources */,
 				4185A1D1301B36C600C6DB8B /* RxImagePickerDelegateProxy.swift in Sources */,
+				410E4FF830242053007F7567 /* MyMapStudy.swift in Sources */,
 				41D1AC4A30173E3200D14C88 /* RegisterViewController.swift in Sources */,
 				41D1AC35301356ED00D14C88 /* AppDelegate.swift in Sources */,
 				4185A1CD301B2EBB00C6DB8B /* UIImagePickerController+RxCreate.swift in Sources */,

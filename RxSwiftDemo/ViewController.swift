@@ -27,21 +27,22 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
 //        Demos(title: "6.Subject", content: "4种Subject", makeVC: { SubjectKnowViewController() }),
 //        Demos(title: "7.操作符选择", content: "了解操作符", makeVC: { OperatorSelectViewController() }),
 //        Demos(title: "8.MVVM简单了解", content: "RxSwift下的MVVM", makeVC: { MVVMKnowViewController() }),
-        Demos(title: "9.MVVM注册", content: "复杂的MVVM", makeVC: {
-            let sb = UIStoryboard(name: "RegisterViewController", bundle: nil)
-            guard let registerVC = sb.instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController else { return UIViewController() }
-            return registerVC
-        }),
-        Demos(title: "10.手机验证码登录", content: "RxSwift 实战登录页面", makeVC: {
-            NormalRegisterViewController()
-        }),
-        Demos(title: "11.选择系统相机和图片", content: "原生图片展示页面", makeVC: {
-            let sb = UIStoryboard(name: "ImagePickerController", bundle: nil)
-            guard let registerVC = sb.instantiateViewController(withIdentifier: "ImagePickerController") as? ImagePickerController else { return UIViewController() }
-            return registerVC
-        }),
-        Demos(title: "12.简单表格", content: "简单表格实战", makeVC: { SimpleTableViewController() }),
-        Demos(title: "13.分区表格", content: "简单的头部分区视图", makeVC: { SectionTableViewController() }),
+//        Demos(title: "9.MVVM注册", content: "复杂的MVVM", makeVC: {
+//            let sb = UIStoryboard(name: "RegisterViewController", bundle: nil)
+//            guard let registerVC = sb.instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController else { return UIViewController() }
+//            return registerVC
+//        }),
+//        Demos(title: "10.手机验证码登录", content: "RxSwift 实战登录页面", makeVC: {
+//            NormalRegisterViewController()
+//        }),
+//        Demos(title: "11.选择系统相机和图片", content: "原生图片展示页面", makeVC: {
+//            let sb = UIStoryboard(name: "ImagePickerController", bundle: nil)
+//            guard let registerVC = sb.instantiateViewController(withIdentifier: "ImagePickerController") as? ImagePickerController else { return UIViewController() }
+//            return registerVC
+//        }),
+//        Demos(title: "12.简单表格", content: "简单表格实战", makeVC: { SimpleTableViewController() }),
+//        Demos(title: "13.分区表格", content: "简单的头部分区视图", makeVC: { SectionTableViewController() }),
+        Demos(title: "13.泛型", content: "简单的泛型使用", makeVC: { OtherKnowViewController() }),
     ]
     
     override func viewDidLoad() {
