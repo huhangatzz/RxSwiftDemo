@@ -32,7 +32,7 @@ class OtherKnowViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //迭代器
         class stateItr: IteratorProtocol {
             var num: Int = 1
@@ -47,10 +47,10 @@ class OtherKnowViewController: UIViewController {
             print("\(l.next() ?? 0)")
             return AnyIterator { l.next()}
         }
-
+        
         let num = findNext(elm: findNext(elm: findNext(elm: stateItr())))
         print("\(num)")
-
+        
         /*
          
          @inlinable public func map<T, E>(_ transform: (Character) throws(E) -> T) throws(E) -> [T] where E : Error
@@ -75,8 +75,8 @@ class OtherKnowViewController: UIViewController {
          
          一旦抛出错误，函数直接退出，不会返回 [T]
          */
-         let cast = ["Vivien", "Marlon", "Kim", "Karl"]
-         let _ = cast.map { $0.lowercased() }
+        let cast = ["Vivien", "Marlon", "Kim", "Karl"]
+        let _ = cast.map { $0.lowercased() }
         
         //map源码理解
         do {
@@ -124,7 +124,7 @@ class OtherKnowViewController: UIViewController {
         
         let mapleSyrup = animals.remove(at: animals.count-1)
         print("\(mapleSyrup)--\(animals)")
-
+        
         print("\(animals)")
         for (index,animal) in animals.enumerated() {
             print("animal \(String(index+1)): \(animal)")
@@ -157,7 +157,47 @@ class OtherKnowViewController: UIViewController {
         //修改value值后,返回新的字典
         let newColors = colors.mapValues { "hex:\($0)" }
         print("\(newColors)")
-  
+        
+        
+        //使用JSONDecoder
+        let json = """
+            {
+        "name": "Durian",
+        "points": 600,
+        "ability": {
+            "mathematics":"excellent",
+            "physics": "bad",
+            "chemistry": "fine"
+        },
+        "description": "A fruit with a distinceive scent."
+        }
+        """.data(using: .utf8)!
+        
+        struct GroceryProduct: Codable {
+            var name: String
+            var points: Int?
+            var ability: Ability
+            var description: String?
+            
+            struct Ability: Codable {
+                var mathematics: Appraise
+                var physics: Appraise
+                var chemistry: Appraise
+            }
+            
+            enum Appraise: String, Codable {
+                case excellent, fine, bad
+            }
+        }
+        
+        let decoder = JSONDecoder()
+        do {
+            let product = try decoder.decode(GroceryProduct.self, from: json)
+            print("\(product.ability.mathematics)")
+        } catch {
+            print("解析错误:\(error)")
+        }
+        
     }
     
     func fxWay() {

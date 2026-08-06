@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		410E4FF63022D96A007F7567 /* OtherKnowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E4FF53022D96A007F7567 /* OtherKnowViewController.swift */; };
 		410E4FF830242053007F7567 /* MyMapStudy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E4FF730242053007F7567 /* MyMapStudy.swift */; };
+		410E4FFA302477A8007F7567 /* MyChainingStudy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E4FF9302477A8007F7567 /* MyChainingStudy.swift */; };
 		417B479D3017477C00DBF8FF /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417B479C3017477C00DBF8FF /* RegisterViewController.storyboard */; };
 		417B479F30174B3500DBF8FF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B479E30174B3500DBF8FF /* RegisterViewModel.swift */; };
 		417B47A83018394400DBF8FF /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B47A73018394400DBF8FF /* RegisterProtocols.swift */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		410E4FF53022D96A007F7567 /* OtherKnowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherKnowViewController.swift; sourceTree = "<group>"; };
 		410E4FF730242053007F7567 /* MyMapStudy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapStudy.swift; sourceTree = "<group>"; };
+		410E4FF9302477A8007F7567 /* MyChainingStudy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChainingStudy.swift; sourceTree = "<group>"; };
 		417B479C3017477C00DBF8FF /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
 		417B479E30174B3500DBF8FF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		417B47A73018394400DBF8FF /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				410E4FF53022D96A007F7567 /* OtherKnowViewController.swift */,
 				410E4FF730242053007F7567 /* MyMapStudy.swift */,
+				410E4FF9302477A8007F7567 /* MyChainingStudy.swift */,
 			);
 			path = OtherKnow;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				452AFB773016353400D7A3DB /* SignalKnowViewController.swift in Sources */,
 				41D1AC36301356ED00D14C88 /* ViewController.swift in Sources */,
 				417B47AA3018461F00DBF8FF /* GitHubDefaultValidationService.swift in Sources */,
+				410E4FFA302477A8007F7567 /* MyChainingStudy.swift in Sources */,
 				4185A1D6301B4D1300C6DB8B /* SimpleTableViewController.swift in Sources */,
 				4185A1D8301B600000C6DB8B /* SimpleTableViewCell.swift in Sources */,
 				4185A1DA301B600000C6DB8B /* UIScrollView+MJRefresh.swift in Sources */,
