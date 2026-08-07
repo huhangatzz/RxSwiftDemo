@@ -33,6 +33,213 @@ class OtherKnowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //使用JSONDecoder
+        let json = """
+            {
+        "name": "Durian",
+        "points": 600,
+        "ability": {
+            "mathematics":"excellent",
+            "physics": "bad",
+            "chemistry": "fine"
+        },
+        "description": "A fruit with a distinceive scent."
+        }
+        """.data(using: .utf8)!
+        
+        struct GroceryProduct: Codable {
+            var name: String
+            var points: Int?
+            var ability: Ability
+            var description: String?
+            
+            struct Ability: Codable {
+                var mathematics: Appraise
+                var physics: Appraise
+                var chemistry: Appraise
+            }
+            
+            enum Appraise: String, Codable {
+                case excellent, fine, bad
+            }
+        }
+        
+        let decoder = JSONDecoder()
+        do {
+            let product = try decoder.decode(GroceryProduct.self, from: json)
+            print("\(product.ability.mathematics)")
+        } catch {
+            print("解析错误:\(error)")
+        }
+        
+        //CodingKey协议
+        let json2 = """
+            {
+                "_nick_name": "Tom",
+                "point": 600
+            }
+            """.data(using: .utf8)!
+        struct GroceryProduct2: Codable {
+            var _nickName: String
+            var point: Int
+            
+            //通过映射的方式实现对不同代码风格的兼容,
+//            enum CodingKeys: String, CodingKey {
+//                case nickName = "nick_name"
+//                case points = "point"
+//            }
+        }
+        let decoder2 = JSONDecoder()
+        //convertFromSnakeCase 默认会把_nick_name -> _nickName
+        decoder2.keyDecodingStrategy = .convertFromSnakeCase
+        do {
+            let result = try decoder2.decode(GroceryProduct2.self, from: json2)
+            print("===\(result._nickName)--\(result.point)")
+        } catch {
+            print("解析错误:\(error)")
+        }
+        
+        //判断字符串首个字符是不是_
+        let stringKey = "_____hu_hang"
+        guard let firstNonUnderscore = stringKey.firstIndex(where: { $0 != "_" }) else {
+            fatalError("全是下划线")
+        }
+        print("---\(firstNonUnderscore)")
+        
+        print("&&&\(stringKey.endIndex)")
+        //先找到整个字符串的最后一个index
+        var lastNonUnderscore = stringKey.index(before: stringKey.endIndex)
+        print("***\(stringKey[lastNonUnderscore])")
+        //从后往前找,找到不是下划线的字符时就跳出while
+        while lastNonUnderscore > firstNonUnderscore && stringKey[lastNonUnderscore] == "_" {
+            //直接把 i 原地往前移动一位
+            stringKey.formIndex(before: &lastNonUnderscore)
+        }
+        print("处理后的值:\(stringKey[lastNonUnderscore])")
+
+        //请求接口数据
+        SMNetWorking<RandomUserResponse>()
+            .requestJSON("https://randomuser.me/api/") { data in
+                print(data.info.seed)
+            }
+        
+        
+        
+    }
+    
+    
+    func fxWay() {
+        //Swift 泛型
+        let dragonsId = [1276,8737,1173]
+        let dragonsName = ["red dragon", "blue dragon", "black dragon"]
+        func showDragons<T>(dragons: [T]) { //T没有任何约束
+            for item in dragons {
+                print("\(item)")
+            }
+        }
+        showDragons(dragons: dragonsId)
+        showDragons(dragons: dragonsName)
+        
+        
+        // Swift 泛型 + 类型约束
+        struct HTNTransition<S: Hashable, E: Hashable> {
+            let event: E
+            let fromState: S
+            let toState: S
+            
+            init(event: E, fromState: S, toState: S) {
+                self.event = event
+                self.fromState = fromState
+                self.toState = toState
+                
+                if fromState == toState {
+                    print("Two state is same")
+                }
+            }
+        }
+        let _ = HTNTransition(event: LoginEvent.reset, fromState: LoginState.idle, toState: LoginState.idle)
+        let _ = HTNTransition(event: LoginEvent.reset, fromState: "2", toState: "2")
+        
+        
+        //关联类型
+        struct states: HTNState {//非泛型
+            // 这个 add 参数是 Int，那协议里的关联类型 StateType 就自动推导为 Int
+            func add(_ item: Int) {
+                print("关联类型: \(item)")
+            }
+        }
+        let tempStates = states()
+        tempStates.add(55)
+        
+        struct states2<T>: HTNState {//泛型更灵活些
+            func add(_ item: T) {
+                print("感受泛型的好处:\(item)")
+            }
+        }
+        let tempStates2 = states2<Array<String>>()
+        tempStates2.add(["33","44","55"])
+        
+        //类型擦除
+        /*
+         当声明一个使用了关联属性的协议对象作为属性时,会出现警告,如何解决:
+         1.泛型约束
+         2.类型擦除
+         */
+        struct StateDelegate<T> {
+            var state: T
+            //var delegate: HTNState
+            
+            // T 遵守 HTNState
+            func testFunc<U: HTNState>(_ value: U) {
+                // value.add(xxx)
+            }
+            
+            //类型擦除
+            var delegate: AnyHTNState
+        }
+        
+        /*
+         类型擦除（Type Eraser）的目的：
+         把「带关联类型的协议」包一层普通结构体，抹掉关联类型信息，让你可以存到变量、数组里。
+         代价：内部要用 Any，编译期部分类型检查转移到运行时。
+         */
+        struct AnyHTNState {
+            // 闭包：接收Any，内部真正去调用原始对象的add
+            private let _add: (Any) -> Void
+            
+            // 初始化：接收任意一个遵守 HTNState 的对象 T
+            init<T: HTNState>(_ base: T) {
+                // 保存一个闭包，捕获外部的 base 和 T.StateType
+                _add = { item in
+                    // item 是 Any，尝试强转成 T.StateType
+                    guard let realItem = item as? T.StateType else {
+                        // 类型不匹配直接return，啥也不干
+                        return
+                    }
+                    base.add(realItem)
+                }
+            }
+            
+            // 对外暴露的add，参数是Any
+            func add(_ item: Any) {
+                _add(item)
+            }
+        }
+        let s = states2<Int>()
+        let erased = AnyHTNState(s)
+        erased.add(55)
+        
+        
+        //Where
+        func stateFilter<FromState: HTNState, toState: HTNState>(_ from: FromState, _ to: toState) where FromState.StateType == toState.StateType {
+            print("where语句是对泛型在应用时的一种约束")
+        }
+        let s2 = states2<Int>()
+        let s3 = states2<Int>()
+        stateFilter(s2, s3)
+        
+        
+        //泛型和Any类型 区别:泛型灵活安全 Any类型会避开类型检查,不安全
         //迭代器
         class stateItr: IteratorProtocol {
             var num: Int = 1
@@ -157,161 +364,6 @@ class OtherKnowViewController: UIViewController {
         //修改value值后,返回新的字典
         let newColors = colors.mapValues { "hex:\($0)" }
         print("\(newColors)")
-        
-        
-        //使用JSONDecoder
-        let json = """
-            {
-        "name": "Durian",
-        "points": 600,
-        "ability": {
-            "mathematics":"excellent",
-            "physics": "bad",
-            "chemistry": "fine"
-        },
-        "description": "A fruit with a distinceive scent."
-        }
-        """.data(using: .utf8)!
-        
-        struct GroceryProduct: Codable {
-            var name: String
-            var points: Int?
-            var ability: Ability
-            var description: String?
-            
-            struct Ability: Codable {
-                var mathematics: Appraise
-                var physics: Appraise
-                var chemistry: Appraise
-            }
-            
-            enum Appraise: String, Codable {
-                case excellent, fine, bad
-            }
-        }
-        
-        let decoder = JSONDecoder()
-        do {
-            let product = try decoder.decode(GroceryProduct.self, from: json)
-            print("\(product.ability.mathematics)")
-        } catch {
-            print("解析错误:\(error)")
-        }
-        
-    }
-    
-    func fxWay() {
-        //Swift 泛型
-        let dragonsId = [1276,8737,1173]
-        let dragonsName = ["red dragon", "blue dragon", "black dragon"]
-        func showDragons<T>(dragons: [T]) { //T没有任何约束
-            for item in dragons {
-                print("\(item)")
-            }
-        }
-        showDragons(dragons: dragonsId)
-        showDragons(dragons: dragonsName)
-        
-        
-        // Swift 泛型 + 类型约束
-        struct HTNTransition<S: Hashable, E: Hashable> {
-            let event: E
-            let fromState: S
-            let toState: S
-            
-            init(event: E, fromState: S, toState: S) {
-                self.event = event
-                self.fromState = fromState
-                self.toState = toState
-                
-                if fromState == toState {
-                    print("Two state is same")
-                }
-            }
-        }
-        let _ = HTNTransition(event: LoginEvent.reset, fromState: LoginState.idle, toState: LoginState.idle)
-        let _ = HTNTransition(event: LoginEvent.reset, fromState: "2", toState: "2")
-        
-        
-        //关联类型
-        struct states: HTNState {//非泛型
-            // 这个 add 参数是 Int，那协议里的关联类型 StateType 就自动推导为 Int
-            func add(_ item: Int) {
-                print("关联类型: \(item)")
-            }
-        }
-        let tempStates = states()
-        tempStates.add(55)
-        
-        struct states2<T>: HTNState {//泛型更灵活些
-            func add(_ item: T) {
-                print("感受泛型的好处:\(item)")
-            }
-        }
-        let tempStates2 = states2<Array<String>>()
-        tempStates2.add(["33","44","55"])
-        
-        //类型擦除
-        /*
-         当声明一个使用了关联属性的协议对象作为属性时,会出现警告,如何解决:
-         1.泛型约束
-         2.类型擦除
-         */
-        struct StateDelegate<T> {
-            var state: T
-            //var delegate: HTNState
-            
-            // T 遵守 HTNState
-            func testFunc<U: HTNState>(_ value: U) {
-                // value.add(xxx)
-            }
-            
-            //类型擦除
-            var delegate: AnyHTNState
-        }
-        
-        /*
-         类型擦除（Type Eraser）的目的：
-         把「带关联类型的协议」包一层普通结构体，抹掉关联类型信息，让你可以存到变量、数组里。
-         代价：内部要用 Any，编译期部分类型检查转移到运行时。
-         */
-        struct AnyHTNState {
-            // 闭包：接收Any，内部真正去调用原始对象的add
-            private let _add: (Any) -> Void
-            
-            // 初始化：接收任意一个遵守 HTNState 的对象 T
-            init<T: HTNState>(_ base: T) {
-                // 保存一个闭包，捕获外部的 base 和 T.StateType
-                _add = { item in
-                    // item 是 Any，尝试强转成 T.StateType
-                    guard let realItem = item as? T.StateType else {
-                        // 类型不匹配直接return，啥也不干
-                        return
-                    }
-                    base.add(realItem)
-                }
-            }
-            
-            // 对外暴露的add，参数是Any
-            func add(_ item: Any) {
-                _add(item)
-            }
-        }
-        let s = states2<Int>()
-        let erased = AnyHTNState(s)
-        erased.add(55)
-        
-        
-        //Where
-        func stateFilter<FromState: HTNState, toState: HTNState>(_ from: FromState, _ to: toState) where FromState.StateType == toState.StateType {
-            print("where语句是对泛型在应用时的一种约束")
-        }
-        let s2 = states2<Int>()
-        let s3 = states2<Int>()
-        stateFilter(s2, s3)
-        
-        
-        //泛型和Any类型 区别:泛型灵活安全 Any类型会避开类型检查,不安全
     }
     
 }

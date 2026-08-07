@@ -10,6 +10,7 @@
 		410E4FF63022D96A007F7567 /* OtherKnowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E4FF53022D96A007F7567 /* OtherKnowViewController.swift */; };
 		410E4FF830242053007F7567 /* MyMapStudy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E4FF730242053007F7567 /* MyMapStudy.swift */; };
 		410E4FFA302477A8007F7567 /* MyChainingStudy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E4FF9302477A8007F7567 /* MyChainingStudy.swift */; };
+		410E4FFC30257FA2007F7567 /* SMNetWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E4FFB30257FA2007F7567 /* SMNetWorking.swift */; };
 		417B479D3017477C00DBF8FF /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417B479C3017477C00DBF8FF /* RegisterViewController.storyboard */; };
 		417B479F30174B3500DBF8FF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B479E30174B3500DBF8FF /* RegisterViewModel.swift */; };
 		417B47A83018394400DBF8FF /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B47A73018394400DBF8FF /* RegisterProtocols.swift */; };
@@ -56,6 +57,7 @@
 		410E4FF53022D96A007F7567 /* OtherKnowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherKnowViewController.swift; sourceTree = "<group>"; };
 		410E4FF730242053007F7567 /* MyMapStudy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapStudy.swift; sourceTree = "<group>"; };
 		410E4FF9302477A8007F7567 /* MyChainingStudy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChainingStudy.swift; sourceTree = "<group>"; };
+		410E4FFB30257FA2007F7567 /* SMNetWorking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMNetWorking.swift; sourceTree = "<group>"; };
 		417B479C3017477C00DBF8FF /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
 		417B479E30174B3500DBF8FF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		417B47A73018394400DBF8FF /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				410E4FF53022D96A007F7567 /* OtherKnowViewController.swift */,
+				410E4FFB30257FA2007F7567 /* SMNetWorking.swift */,
 				410E4FF730242053007F7567 /* MyMapStudy.swift */,
 				410E4FF9302477A8007F7567 /* MyChainingStudy.swift */,
 			);
@@ -469,6 +472,7 @@
 				452AFB92301A524100D7A3DB /* NormalRegisterProtocols.swift in Sources */,
 				4185A1DF301C953800C6DB8B /* MoyaProviderExtension.swift in Sources */,
 				41D1AC44301731CD00D14C88 /* MVVMKnowViewController.swift in Sources */,
+				410E4FFC30257FA2007F7567 /* SMNetWorking.swift in Sources */,
 				417B47B13018A8A100DBF8FF /* ActivityIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
